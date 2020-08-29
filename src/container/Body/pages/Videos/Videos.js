@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import YoutubeState from "../../../../context/videos/YoutubeState";
 import youtube from "../../../../api/youtubeApi";
 import VideosList from "./VideosList";
 
@@ -21,7 +22,11 @@ export class Videos extends Component {
   }
   render() {
     console.log(this.state);
-    return <VideosList videos={this.state.videos} />;
+    return (
+      <YoutubeState>
+        <VideosList videos={this.state.videos} />
+      </YoutubeState>
+    );
   }
 }
 
