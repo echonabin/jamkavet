@@ -2,14 +2,14 @@ import React from "react";
 
 import "./VideoCard.css";
 
-const VideoCard = ({ src, title }) => {
+const VideoCard = ({ src, title, video, onVideoSelect }) => {
   return (
     <div className='cards'>
       <figure className='card'>
-        <a href='/'>
+        <div onClick={() => onVideoSelect(video)}>
           <img src={src} alt='Need to add video title' />
           <figcaption>{title}</figcaption>
-        </a>
+        </div>
       </figure>
     </div>
   );

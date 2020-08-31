@@ -1,6 +1,7 @@
 [{
         "item": 1,
         "id": 1,
+        "featured": true,
         "header": "Nepal face economy crisis",
         "headlines": "Date 2020, Nepal face a great economic crisis as the covid 19 rapidly attack the country",
         "thumbnail": "https://images.unsplash.com/photo-1584714268709-c3dd9c92b378?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=799&q=80",
@@ -9,6 +10,7 @@
     {
         "item": 2,
         "id": 2,
+        "featured": true,
         "header": "Tourism flourish in Country like Nepal and Bhutan",
         "headlines": "Nepal started to invest large amount of money on Tourism and Travel recentely",
         "thumbnail": "https://images.unsplash.com/photo-1492584328860-c0c7bb599679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
@@ -17,6 +19,7 @@
     {
         "item": 3,
         "id": 3,
+        "featured": false,
         "header": "Business and startups are basically welcomed by the country",
         "headlines": "Business startups can take a governmental loan up to $300k without any intrest rate",
         "thumbnail": "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
@@ -25,6 +28,7 @@
     {
         "item": 4,
         "id": 4,
+        "featured": true,
         "header": "Festival king Nepal get great effected due to COVID 19",
         "headlines": "Country with large festival had remain silent this whole year because of COVID pandamic",
         "thumbnail": "https://images.unsplash.com/photo-1597131267491-b28fc433ea3c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=690&q=80",

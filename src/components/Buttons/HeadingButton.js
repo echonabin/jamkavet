@@ -4,12 +4,9 @@ import "./HeadingButton.css";
 
 const HeadingButton = ({ text }) => {
   return (
-    <div>
-      <div className='container'>
-        <div className='shadows'>
-          <span>{text}</span>
-        </div>
-      </div>
+    <div className='section-title'>
+      <h4>{text}</h4>
+      <div />
     </div>
   );
 };

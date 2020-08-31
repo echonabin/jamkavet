@@ -4,21 +4,15 @@ import { Grid } from "@material-ui/core";
 import VideoCard from "../Videos/VideoCard";
 import HomeLayout from "./HomeLayout";
 import HeadingButton from "../../../../components/Buttons/HeadingButton";
+import FeaturedBlog from "../Blogs/Featured/FeaturedBlog";
 
 const Home = () => {
   return (
     <HomeLayout>
-      <HeadingButton text='videos' />
+      <HeadingButton text='Featured Blogs' />
       <Grid container spacing={0}>
         <Grid item xs={12} sm={4} md={3}>
-          <VideoCard
-            src={require("../../../../static/Backgrounds/naturedawn.jpg")}
-            title='Card'
-          />
-          <VideoCard
-            src={require("../../../../static/Backgrounds/naturedawn.jpg")}
-            title='Card'
-          />
+          <FeaturedBlog />
         </Grid>
       </Grid>
     </HomeLayout>

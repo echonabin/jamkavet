@@ -10,8 +10,11 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "eqcss-parse": "^1.0.0",
+    "r": "0.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-modal": "^3.11.2",
+    "react-modal-video": "^1.2.5",
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2",
     "react-scripts": "3.4.3"
