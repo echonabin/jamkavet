@@ -8,8 +8,17 @@ const BlogState = (props) => {
       age: 19,
     },
   ]);
+  const handelChange = () => {
+    setBlog({
+      name: "nubie",
+    });
+  };
   return (
-    <blogContext.Provider value={{ ...blog }}>
+    <blogContext.Provider
+      value={{
+        ...blog,
+        handelChange: handelChange,
+      }}>
       {props.children}
     </blogContext.Provider>
   );
