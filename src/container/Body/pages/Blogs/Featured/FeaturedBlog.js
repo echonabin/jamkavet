@@ -4,6 +4,7 @@ import HeadingButton from "../../../../../components/Buttons/HeadingButton";
 import "./FeaturedBlog.css";
 import { Link } from "react-router-dom";
 const FeaturedBlog = ({ item, header, headlines, author, thumbnail, data }) => {
+  const urlForImage = "http://localhost:1337";
   return (
     <>
       <Link
@@ -14,7 +15,7 @@ const FeaturedBlog = ({ item, header, headlines, author, thumbnail, data }) => {
           <div
             className='thumb'
             style={{
-              backgroundImage: `url(${thumbnail})`,
+              backgroundImage: `url(${urlForImage}${thumbnail})`,
             }}
           />
           <article>

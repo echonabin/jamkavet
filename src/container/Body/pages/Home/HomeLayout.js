@@ -1,22 +1,27 @@
 import React from "react";
-import { Container } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 
 import "./HomeLayout.css";
 
 const HomeLayout = ({ children }) => {
   return (
     <>
-      <div className='content'>
-        <div className='overlay'>
-          <h1>Hello</h1>
-          <p>This is our Website</p>
-          <br />
-          <a href='/' className='btn btn-white btn-animated'>
-            Subscribe
-          </a>
+      <Grid container>
+        <div className='content'>
+          <div className='overlay'>
+            <h1>JamkaVet</h1>
+            <p>
+              Relif the pain, feel our content!!Don't forget to subscribe us
+              👇👇
+            </p>
+            <br />
+            <a href='/' className='btn btn-white btn-animated'>
+              Subscribe
+            </a>
+          </div>
         </div>
-      </div>
-      <Container>{children}</Container>
+        <Container>{children}</Container>
+      </Grid>
     </>
   );
 };

@@ -3,6 +3,7 @@ import "./Blogs.css";
 import { Link } from "react-router-dom";
 
 const Blog = ({ item, header, headlines, author, thumbnail }) => {
+  const urlForImage = "http://localhost:1337";
   return (
     <Link
       to={"/blogs/" + item}
@@ -13,7 +14,7 @@ const Blog = ({ item, header, headlines, author, thumbnail }) => {
         <div
           className='thumb'
           style={{
-            backgroundImage: `url(${thumbnail})`,
+            backgroundImage: `url(${urlForImage}${thumbnail})`,
           }}
         />
         <article>

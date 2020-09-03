@@ -1,14 +1,25 @@
-import React, { useReducer } from "react";
+import React, { Component } from "react";
+import blog from "../../api/blogApi";
 import BlogContext from "./BlogContext";
-import reducer from "../reducer";
-const BlogState = (props) => {
-  const initialState = [];
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  return (
-    <BlogContext.Provider value={[state, dispatch]}>
-      {props.children}
-    </BlogContext.Provider>
-  );
-};
-export default BlogState;
+export default class BlogState extends Component {
+  state = {
+    blogs: [],
+    isLoading: true,
+    featuredBlogs: [],
+  };
+  async componentDidMount() {
+    const response = await blog.get("/Blogs");
+    this.setState({
+      blogs: response,
+      isLoading: false,
+    });
+    console.log(this.state.blogs);
+  }
+  render() {
+    return (
+      <BlogContext.Provider value={this.state}>
+        {this.props.children}
+      </BlogContext.Provider>
+    );
+  }
+}
