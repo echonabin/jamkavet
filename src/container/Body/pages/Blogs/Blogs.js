@@ -5,13 +5,14 @@ import Blog from "./Blog";
 import FeaturedBlog from "./Featured/FeaturedBlog";
 import HeadingButton from "../../../../components/Buttons/HeadingButton";
 import BlogContext from "../../../../context/blogs/BlogContext";
+import Loading from "../../../../components/Loading/Loading";
 const blogs = dummyblog;
 const Blogs = () => {
   const data = useContext(BlogContext);
   const blogsArray = data.blogs.data;
   console.log(blogsArray);
   if (data.isLoading === true) {
-    return <h1>Loading....</h1>;
+    return <Loading />;
   } else {
     return (
       <>
