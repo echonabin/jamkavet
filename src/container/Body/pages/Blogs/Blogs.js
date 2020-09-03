@@ -23,11 +23,11 @@ const Blogs = () => {
               return (
                 <FeaturedBlog
                   key={blog.id}
-                  item={blog.id}
+                  item={blog.CardPosition}
                   header={blog.title}
                   headlines={blog.title}
                   author={blog.created_by.firstname}
-                  thumbnail={blog.images[0].url}
+                  thumbnail={blog.thumbnails.url}
                   data={blog}
                 />
               );
@@ -39,11 +39,11 @@ const Blogs = () => {
           {blogsArray.map((blog) => (
             <Blog
               key={blog.id}
-              item={blog.id}
+              item={blog.CardPosition}
               header={blog.title}
               headlines={blog.title}
               author={blog.created_by.firstname}
-              thumbnail={blog.images[0].url}
+              thumbnail={blog.thumbnails.url}
             />
           ))}
         </div>
