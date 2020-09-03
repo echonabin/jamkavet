@@ -22,6 +22,7 @@ const Blogs = () => {
                 headlines={blog.headlines}
                 author={blog.author}
                 thumbnail={blog.thumbnail}
+                data={blog}
               />
             );
           }
