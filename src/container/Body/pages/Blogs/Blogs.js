@@ -19,7 +19,6 @@ const Blogs = () => {
         <HeadingButton text='Latest' />
         <div className='band'>
           {blogsArray.map((blog) => {
-            console.log(blog.images[0].url);
             if (blog.Featured) {
               return (
                 <FeaturedBlog
