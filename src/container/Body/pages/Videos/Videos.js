@@ -21,6 +21,7 @@ const Videos = () => {
         handelClose={state.handelModalClose}
         selectedVideo={state.selectedVideo}
         handelModalClose={state.handelModalClose}
+        handelLoadMore={state.handelLoadMore}
       />
       ;
     </>

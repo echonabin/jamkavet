@@ -9,6 +9,7 @@ import {
   HANDEL_MODAL_CLOSE,
   HANDEL_SET_VIDEOS,
   HANDEL_FEATURE_VIDEOS,
+  HANDEL_LOAD_MORE,
 } from "../types";
 
 const VideoState = (props) => {
@@ -17,6 +18,7 @@ const VideoState = (props) => {
     featuredVideo: [],
     selectedVideo: null,
     openModal: false,
+    maxResults: 100,
   };
   useEffect(async () => {
     const response = await youtube.get("/playlistItems", {
@@ -24,7 +26,7 @@ const VideoState = (props) => {
         part: "snippet",
         playlistId: "UUZ9-B7ebuPUc3zfSu7TaDKw",
         key: "AIzaSyAuR63mqhbH0EVd73070DpRASuODidLEiQ",
-        maxResults: "16",
+        maxResults: initialstate.maxResults,
       },
     });
     //Set Videos
@@ -47,13 +49,21 @@ const VideoState = (props) => {
       payload: video,
     });
   };
-  //Set openModal
+  //Set Modal
   const handelModalClose = () => {
     dispatch({
       type: HANDEL_MODAL_CLOSE,
     });
   };
-  //Set featured Video
+  //Handel loadmore
+
+  const handelLoadMore = () => {
+    dispatch({
+      type: HANDEL_LOAD_MORE,
+      payload: initialstate.maxResults,
+    });
+  };
+
   const [state, dispatch] = useReducer(reducer, initialstate);
   return (
     <VideoContext.Provider
@@ -64,6 +74,7 @@ const VideoState = (props) => {
         openModal: state.openModal,
         handelVideoSelect,
         handelModalClose,
+        handelLoadMore,
       }}>
       {props.children}
     </VideoContext.Provider>

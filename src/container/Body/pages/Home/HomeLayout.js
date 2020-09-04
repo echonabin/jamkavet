@@ -11,11 +11,13 @@ const HomeLayout = ({ children }) => {
           <div className='overlay'>
             <h1>JamkaVet</h1>
             <p>
-              Relif the pain, feel our content!!Don't forget to subscribe us
-              👇👇
+              Manka Kura is a reflection of inspiration, we will upload struggle
+              stories and motivate videos.
             </p>
             <br />
-            <a href='/' className='btn btn-white btn-animated'>
+            <a
+              href='https://www.youtube.com/mankakura'
+              className='btn btn-white btn-animated'>
               Subscribe
             </a>
           </div>

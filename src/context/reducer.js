@@ -3,6 +3,7 @@ import {
   HANDEL_MODAL_CLOSE,
   HANDEL_SET_VIDEOS,
   HANDEL_FEATURE_VIDEOS,
+  HANDEL_LOAD_MORE,
 } from "./types";
 export default (state, action) => {
   switch (action.type) {
@@ -26,6 +27,11 @@ export default (state, action) => {
       return {
         ...state,
         featuredVideo: action.payload,
+      };
+    case HANDEL_LOAD_MORE:
+      return {
+        ...state,
+        maxResults: 16,
       };
     default:
       break;

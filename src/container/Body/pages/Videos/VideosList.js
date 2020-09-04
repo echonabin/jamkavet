@@ -5,6 +5,7 @@ import VideoCard from "./VideoCard";
 import SearchBox from "../../../../components/Boxes/SearchBox";
 import ModalVideo from "react-modal-video";
 import "./VideoModal.css";
+import LoadMore from "../../../../components/Buttons/LoadMore";
 
 const VideosList = ({
   videos,
@@ -12,6 +13,7 @@ const VideosList = ({
   isOpen,
   handelClose,
   selectedVideo,
+  handelLoadMore,
 }) => {
   const renderList = videos.map((video) => {
     return (
@@ -32,6 +34,7 @@ const VideosList = ({
         <Grid container spacing={0}>
           {renderList}
         </Grid>
+        <button onClick={handelLoadMore}>LoadMore</button>
       </>
     );
   }
