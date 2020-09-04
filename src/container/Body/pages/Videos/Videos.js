@@ -1,54 +1,28 @@
-import React, { Component } from "react";
-
-import youtube from "../../../../api/youtubeApi";
+import React from "react";
 import VideosList from "./VideosList";
+import { useContext } from "react";
+import VideoContext from "../../../../context/videos/VideosContext";
 
-export class Videos extends Component {
-  state = {
-    videos: [],
-    selectedVideo: null,
-    openModal: false,
-  };
-  async componentDidMount() {
-    const response = await youtube.get("/playlistItems", {
-      params: {
-        part: "snippet",
-        playlistId: "PL4uCM6DTW62E3UV1m7wgGEsHiwrGh2cmK",
-        key: "AIzaSyAuR63mqhbH0EVd73070DpRASuODidLEiQ",
-        maxResults: "16",
-      },
-    });
-    this.setState({
-      videos: response.data.items,
-    });
+const Videos = () => {
+  const state = useContext(VideoContext);
+  const videoItems = state.videos;
+  const { items } = videoItems;
+  if (!items) {
+    return <h1>Loading...</h1>;
   }
-  handelVideoSelect = (video) => {
-    this.setState({
-      selectedVideo: video,
-      openModal: true,
-    });
-  };
-  handelModalClose = () => {
-    this.setState({
-      openModal: false,
-    });
-  };
-  render() {
-    console.log(this.state);
-    return (
-      <>
-        <VideosList
-          videos={this.state.videos}
-          onVideoSelect={this.handelVideoSelect}
-          isOpen={this.state.openModal}
-          handelClose={this.handelModalClose}
-          selectedVideo={this.state.selectedVideo}
-          handelModalClose={this.handelModalClose}
-        />
-        ;
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <VideosList
+        videos={items}
+        onVideoSelect={state.handelVideoSelect}
+        isOpen={state.openModal}
+        handelClose={state.handelModalClose}
+        selectedVideo={state.selectedVideo}
+        handelModalClose={state.handelModalClose}
+      />
+      ;
+    </>
+  );
+};
 
 export default Videos;
