@@ -11,11 +11,12 @@ import LoadMore from "../../../../components/Buttons/LoadMore";
 import BlogContext from "../../../../context/blogs/BlogContext";
 import Loading from "../../../../components/Loading/Loading";
 import VideoContext from "../../../../context/videos/VideosContext";
+import VideosList from "../Videos/VideosList";
 const Home = () => {
   const data = useContext(BlogContext);
   //Featured videos data from context api
-  const FeaturedVids = useContext(VideoContext);
-  const videoArray = FeaturedVids.videos.items;
+  const state = useContext(VideoContext);
+  const videoArray = state.featuredVideo;
   if (!videoArray) {
     return <Loading />;
   }
@@ -25,8 +26,6 @@ const Home = () => {
     return <Loading />;
   } else {
     const filterBlogs = blogsArray.filter((blog) => blog.Featured === true);
-
-    const onVideoSelect = {};
 
     return (
       <>
@@ -55,17 +54,15 @@ const Home = () => {
             <LoadMore pageUrl='/blogs' Title='See More' />
           </div>
           <HeadingButton text='Featured Videos' />
-          <Grid container>
-            {videoArray.map((video) => (
-              <Grid item xs={12} md={3} key={video.id}>
-                <VideoCard
-                  src={video.snippet.thumbnails.medium.url}
-                  onVideoSelect={onVideoSelect}
-                  video={video}
-                />
-              </Grid>
-            ))}
-          </Grid>
+          <VideosList
+            onVideoSelect={state.handelVideoSelect}
+            videos={videoArray}
+            isOpen={state.openModal}
+            handelClose={state.handelModalClose}
+            selectedVideo={state.selectedVideo}
+            handelModalClose={state.handelModalClose}
+          />
+          <LoadMore pageUrl='/videos' Title='See More' />
         </HomeLayout>
       </>
     );

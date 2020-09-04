@@ -5,9 +5,16 @@ import "./LoadMore.css";
 
 const LoadMore = ({ pageUrl, Title }) => {
   return (
-    <Link to={pageUrl} className='btn-primary'>
-      {Title}
-    </Link>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+      <Link to={pageUrl} className='btn-primary'>
+        {Title}
+      </Link>
+    </div>
   );
 };
 

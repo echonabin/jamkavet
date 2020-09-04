@@ -12,7 +12,6 @@ const VideosList = ({
   isOpen,
   handelClose,
   selectedVideo,
-  handelModalClose,
 }) => {
   const renderList = videos.map((video) => {
     return (
