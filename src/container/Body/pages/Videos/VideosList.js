@@ -17,9 +17,10 @@ const VideosList = ({
     return (
       <Grid item xs={12} sm={4} md={3} key={video.id}>
         <VideoCard
-          src={video.snippet.thumbnails.medium.url}
+          src={video.snippet.thumbnails.high.url}
           onVideoSelect={onVideoSelect}
           video={video}
+          title={video.snippet.title}
         />
       </Grid>
     );
