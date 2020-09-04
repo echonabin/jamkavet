@@ -1,6 +1,8 @@
 import React from "react";
-import VideosList from "./VideosList";
 import { useContext } from "react";
+
+import Loading from "../../../../components/Loading/Loading";
+import VideosList from "./VideosList";
 import VideoContext from "../../../../context/videos/VideosContext";
 
 const Videos = () => {
@@ -8,7 +10,7 @@ const Videos = () => {
   const videoItems = state.videos;
   const { items } = videoItems;
   if (!items) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
   return (
     <>

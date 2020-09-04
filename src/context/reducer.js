@@ -2,6 +2,7 @@ import {
   HANDEL_VIDEO_SELECT,
   HANDEL_MODAL_CLOSE,
   HANDEL_SET_VIDEOS,
+  HANDEL_FEATURE_VIDEOS,
 } from "./types";
 export default (state, action) => {
   switch (action.type) {
@@ -20,6 +21,11 @@ export default (state, action) => {
         ...state,
         selectedVideo: action.payload,
         openModal: true,
+      };
+    case HANDEL_FEATURE_VIDEOS:
+      return {
+        ...state,
+        featuredVideo: action.payload,
       };
     default:
       break;

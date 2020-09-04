@@ -8,6 +8,7 @@ import {
   HANDEL_VIDEO_SELECT,
   HANDEL_MODAL_CLOSE,
   HANDEL_SET_VIDEOS,
+  HANDEL_FEATURE_VIDEOS,
 } from "../types";
 
 const VideoState = (props) => {
@@ -30,6 +31,13 @@ const VideoState = (props) => {
     dispatch({
       type: HANDEL_SET_VIDEOS,
       payload: response.data,
+    });
+    //Set featured videos
+    const allVideos = response.data.items;
+    const featuredOne = allVideos.slice(0, 8);
+    dispatch({
+      type: HANDEL_FEATURE_VIDEOS,
+      payload: featuredOne,
     });
   }, []);
   //Set selected Video
