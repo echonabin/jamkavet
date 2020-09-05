@@ -1,6 +1,5 @@
 import React from "react";
 
-import HeadingButton from "../../../../../components/Buttons/HeadingButton";
 import "./FeaturedBlog.css";
 import { Link } from "react-router-dom";
 const FeaturedBlog = ({ item, header, headlines, author, thumbnail, id }) => {

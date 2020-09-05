@@ -1,8 +1,6 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
 import { useContext } from "react";
 
-import VideoCard from "../Videos/VideoCard";
 import HomeLayout from "./HomeLayout";
 import HeadingButton from "../../../../components/Buttons/HeadingButton";
 import FeaturedBlog from "../Blogs/Featured/FeaturedBlog";

@@ -10,7 +10,6 @@ import Loading from "../../../../components/Loading/Loading";
 const Blogs = () => {
   const data = useContext(BlogContext);
   const blogsArray = data.blogs;
-  console.log(blogsArray);
   if (data.isLoading === true) {
     return <Loading />;
   } else {
@@ -32,6 +31,8 @@ const Blogs = () => {
                   data={blog}
                 />
               );
+            } else {
+              return null;
             }
           })}
         </div>

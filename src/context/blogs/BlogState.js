@@ -13,13 +13,10 @@ export default class BlogState extends Component {
       blogs: response.data,
       isLoading: false,
     });
-    console.log(this.state.blogs);
   }
   getBlog = (item) => {
     let tmpBlogs = [...this.state.blogs];
-    console.log(tmpBlogs);
     const blog = tmpBlogs.find((blog) => blog.id == item);
-    console.log(blog);
     return blog;
   };
   render() {
