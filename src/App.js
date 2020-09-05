@@ -9,6 +9,7 @@ import Blogs from "./container/Body/pages/Blogs/Blogs";
 import ErrorPage from "./container/Error/ErrorPage";
 import BlogState from "./context/blogs/BlogState";
 import VideoState from "./context/videos/VideoState";
+import SingleBlog from "./container/Body/pages/Blogs/ SingleBlog";
 const App = () => {
   return (
     <>
@@ -20,8 +21,8 @@ const App = () => {
               <Switch>
                 <Route path='/' exact component={Home} />
                 <Route path='/videos' exact component={Videos} />
-                <Route path='/blogs' component={Blogs} />
-                <Route path='/:blogId' exact component={Blogs} />
+                <Route exact path='/blogs' component={Blogs} />
+                <Route exact path='/blogs/:blogId' component={SingleBlog} />
                 <Route component={ErrorPage} />
               </Switch>
             </Layout>

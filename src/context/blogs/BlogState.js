@@ -10,14 +10,21 @@ export default class BlogState extends Component {
   async componentDidMount() {
     const response = await blog.get("/Blogs");
     this.setState({
-      blogs: response,
+      blogs: response.data,
       isLoading: false,
     });
     console.log(this.state.blogs);
   }
+  getBlog = (item) => {
+    let tmpBlogs = [...this.state.blogs];
+    console.log(tmpBlogs);
+    const blog = tmpBlogs.find((blog) => blog.id == item);
+    console.log(blog);
+    return blog;
+  };
   render() {
     return (
-      <BlogContext.Provider value={this.state}>
+      <BlogContext.Provider value={{ ...this.state, getBlog: this.getBlog }}>
         {this.props.children}
       </BlogContext.Provider>
     );

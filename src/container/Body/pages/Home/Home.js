@@ -21,7 +21,7 @@ const Home = () => {
     return <Loading />;
   }
   //Featured videos variable ended here!!
-  const blogsArray = data.blogs.data;
+  const blogsArray = data.blogs;
   if (!blogsArray) {
     return <Loading />;
   } else {
@@ -34,6 +34,7 @@ const Home = () => {
           <div className='band'>
             {filterBlogs.map((blog) => (
               <FeaturedBlog
+                id={blog.id}
                 key={blog.id}
                 item={blog.CardPosition}
                 header={blog.title}

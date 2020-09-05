@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
+
 import "./Blogs.css";
-import dummyblog from "./dummyblog.json";
 import Blog from "./Blog";
 import FeaturedBlog from "./Featured/FeaturedBlog";
 import HeadingButton from "../../../../components/Buttons/HeadingButton";
 import BlogContext from "../../../../context/blogs/BlogContext";
 import Loading from "../../../../components/Loading/Loading";
-const blogs = dummyblog;
+
 const Blogs = () => {
   const data = useContext(BlogContext);
-  const blogsArray = data.blogs.data;
+  const blogsArray = data.blogs;
   console.log(blogsArray);
   if (data.isLoading === true) {
     return <Loading />;
@@ -23,6 +23,7 @@ const Blogs = () => {
               return (
                 <FeaturedBlog
                   key={blog.id}
+                  id={blog.id}
                   item={blog.CardPosition}
                   header={blog.title}
                   headlines={blog.title}
@@ -39,6 +40,7 @@ const Blogs = () => {
           {blogsArray.map((blog) => (
             <Blog
               key={blog.id}
+              id={blog.id}
               item={blog.CardPosition}
               header={blog.title}
               headlines={blog.title}
