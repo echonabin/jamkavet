@@ -34,7 +34,6 @@ const VideosList = ({
         <Grid container spacing={0}>
           {renderList}
         </Grid>
-        <button onClick={handelLoadMore}>LoadMore</button>
       </>
     );
   }

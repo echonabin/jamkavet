@@ -38,7 +38,7 @@ const Home = () => {
                 key={blog.id}
                 item={blog.CardPosition}
                 header={blog.title}
-                headlines={blog.title}
+                headlines={blog.description.slice(0, 100) + "....."}
                 author={blog.created_by.firstname}
                 thumbnail={blog.thumbnails.url}
                 data={blog}
