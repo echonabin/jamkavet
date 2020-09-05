@@ -10,6 +10,8 @@ import {
   HANDEL_SET_VIDEOS,
   HANDEL_FEATURE_VIDEOS,
   HANDEL_LOAD_MORE,
+  HANDEL_SEARCH_TEXT,
+  HANDEL_SEARCH_SUBMIT,
 } from "../types";
 
 const VideoState = (props) => {

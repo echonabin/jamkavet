@@ -2,7 +2,6 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 
 import VideoCard from "./VideoCard";
-import SearchBox from "../../../../components/Boxes/SearchBox";
 import ModalVideo from "react-modal-video";
 import "./VideoModal.css";
 import LoadMore from "../../../../components/Buttons/LoadMore";
@@ -30,7 +29,6 @@ const VideosList = ({
   if (!selectedVideo) {
     return (
       <>
-        <SearchBox />
         <Grid container spacing={0}>
           {renderList}
         </Grid>
