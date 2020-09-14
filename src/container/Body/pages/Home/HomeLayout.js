@@ -9,11 +9,8 @@ const HomeLayout = ({ children }) => {
       <Grid container>
         <div className='content'>
           <div className='overlay'>
-            <h1>JamkaVet</h1>
-            <p>
-              Manka Kura is a reflection of inspiration, we will upload struggle
-              stories and motivate videos.
-            </p>
+            <h1>Jamkavhet</h1>
+            <q>Reflection of Insipiration</q>
             <br />
             <a
               href='https://www.youtube.com/mankakura'

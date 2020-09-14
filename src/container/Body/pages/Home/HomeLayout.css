@@ -8,6 +8,7 @@
     background: url('https://images.unsplash.com/photo-1597310078734-0eef281fd56c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80https://images.unsplash.com/photo-1597116636827-1de4805fef3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80');
     text-align: center;
     width: 100%;
+    margin-top: 1rem;
     height: auto;
     background-size: cover;
     background-attachment: fixed;
@@ -19,7 +20,7 @@
 .content .overlay {
     width: 100%;
     height: 100%;
-    padding: 50px;
+    padding: 8.5rem;
     color: #FFF;
     text-shadow: 1px 1px 1px #333;
     background-image: linear-gradient(100deg, #9f05ff69 10%, #fd5e086b 100%);
@@ -32,9 +33,9 @@ h1 {
 }
 
 h3,
-p {
+q {
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     font-size: 24px;
 }
 
@@ -47,6 +48,7 @@ p {
     border-radius: 100px;
     transition: all 0.2s;
     position: relative;
+    margin-top: 3rem;
 }
 
 .btn:hover {

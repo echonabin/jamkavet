@@ -28,6 +28,10 @@ const Home = () => {
     return (
       <>
         <HomeLayout>
+          {/* Remember there should only be 3 items on each */}
+          <HeadingButton text='Inspiring' />
+          <HeadingButton text='Interesting' />
+          <HeadingButton text='Recommended' />
           <HeadingButton text='Featured Blogs' />
           <div className='band'>
             {filterBlogs.map((blog) => (
