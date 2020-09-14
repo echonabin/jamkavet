@@ -33,8 +33,8 @@ export default function HideAppBar(props) {
               <a href='/'>
                 <img
                   alt='icon'
-                  src={require("../static/Topbar/vs.png")}
-                  style={{ width: 30 }}
+                  src={require("../static/Icons/mankakura.png")}
+                  style={{ width: "150px" }}
                 />
               </a>
               <div className={classes.grow} />
@@ -46,10 +46,22 @@ export default function HideAppBar(props) {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to='/videos'>Videos</NavLink>
+                    <NavLink to='/people'>People</NavLink>
                   </li>
                   <li>
-                    <NavLink to='/blogs'>Blogs</NavLink>
+                    <NavLink to='/place'>Place</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/brand'>Brand</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/history'>History</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/fiction'>Fiction</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/videos'>Videos</NavLink>
                   </li>
                 </ul>
               </nav>

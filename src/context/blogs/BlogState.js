@@ -16,6 +16,7 @@ export default class BlogState extends Component {
   }
   getBlog = (item) => {
     let tmpBlogs = [...this.state.blogs];
+    // eslint-disable-next-line eqeqeq
     const blog = tmpBlogs.find((blog) => blog.id == item);
     return blog;
   };

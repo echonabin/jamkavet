@@ -20,27 +20,32 @@ const VideoState = (props) => {
     openModal: false,
     maxResults: 100,
   };
-  useEffect(async () => {
-    const response = await youtube.get("/playlistItems", {
-      params: {
-        part: "snippet",
-        playlistId: "UUZ9-B7ebuPUc3zfSu7TaDKw",
-        key: "AIzaSyAuR63mqhbH0EVd73070DpRASuODidLEiQ",
-        maxResults: initialstate.maxResults,
-      },
-    });
-    //Set Videos
-    dispatch({
-      type: HANDEL_SET_VIDEOS,
-      payload: response.data,
-    });
-    //Set featured videos
-    const allVideos = response.data.items;
-    const featuredOne = allVideos.slice(0, 8);
-    dispatch({
-      type: HANDEL_FEATURE_VIDEOS,
-      payload: featuredOne,
-    });
+  useEffect(() => {
+    youtube
+      .get("/playlistItems", {
+        params: {
+          part: "snippet",
+          playlistId: "UUZ9-B7ebuPUc3zfSu7TaDKw",
+          key: "AIzaSyAuR63mqhbH0EVd73070DpRASuODidLEiQ",
+          maxResults: initialstate.maxResults,
+        },
+      })
+      .then((response) => {
+        //Set Videos
+        dispatch({
+          type: HANDEL_SET_VIDEOS,
+          payload: response.data,
+        });
+        //Set featured videos
+        const allVideos = response.data.items;
+        const featuredOne = allVideos.slice(0, 8);
+        dispatch({
+          type: HANDEL_FEATURE_VIDEOS,
+          payload: featuredOne,
+        });
+      })
+      .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   //Set selected Video
   const handelVideoSelect = (video) => {
