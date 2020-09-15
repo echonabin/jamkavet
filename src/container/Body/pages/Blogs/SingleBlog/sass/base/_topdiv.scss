@@ -1,0 +1,88 @@
+.__headcard {
+    background: rgb(240, 240, 240);
+
+    ._content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: thin solid grey;
+
+
+        ._title {
+            margin-top: 1em;
+            display: grid;
+            grid-template-rows: 4fr 1fr;
+            border-right: thin solid grey;
+
+            h3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                letter-spacing: .3em;
+                color: #000;
+                font-size: 3em;
+                text-align: center;
+            }
+
+            span {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                text-transform: uppercase;
+                letter-spacing: .3em;
+                margin-bottom: 1rem;
+                font-size: 1.6em;
+                font-weight: 400;
+                color: rgb(39, 39, 39);
+            }
+
+            ._author {
+                display: flex;
+                font-size: 0.7em;
+                text-transform: uppercase;
+                letter-spacing: .3em;
+                margin-left: 1em;
+                color: grey;
+
+                p {
+                    margin-top: 1.3em;
+                }
+
+                img {
+                    width: auto;
+                    height: 1rem;
+                }
+            }
+        }
+
+        img {
+            border-image: none;
+            overflow: hidden;
+            width: 95%;
+            height: 20rem;
+            margin: 1.5em;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .__headcard {
+        ._content {
+            grid-template-columns: 1fr;
+            border: none;
+
+            img {
+                border-image: none;
+                overflow: hidden;
+                width: 90%;
+                height: 10rem;
+                margin: 1.5em;
+            }
+        }
+
+        ._title {
+            grid-template-rows: 1fr;
+            border: none;
+        }
+    }
+}

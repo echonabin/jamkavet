@@ -1,0 +1,13 @@
+.featuredcards {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    .featuredcards {
+        grid-template-columns: 1fr;
+        grid-gap: 1em;
+    }
+}

@@ -1,0 +1,29 @@
+.lastcards {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 2fr 1.7fr;
+    grid-gap: 1em;
+    margin-bottom: 1em;
+
+    .smallcards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: .2em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .lastcards {
+        grid-template-columns: 1fr;
+        grid-gap: 1em;
+    }
+
+    .lastcards {
+        .smallcards {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: 1em;
+        }
+    }
+}

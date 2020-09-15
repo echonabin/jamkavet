@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./SinglePost.scss";
-import Blog from "../Blog";
+import Blog from "../../container/Body/pages/Blogs/Blog";
 
 const SinglePost = () => {
   return (
@@ -18,7 +18,7 @@ const SinglePost = () => {
               <a href='/' className='author'>
                 <span class='name'>Admin</span>
                 <img
-                  src={require("../../../../../static/Icons/mankakura.png")}
+                  src={require("../../static/Icons/mankakura.png")}
                   alt='icon'
                 />
               </a>
@@ -29,7 +29,7 @@ const SinglePost = () => {
           <div className='_item-zoom'>
             <a href='/'>
               <img
-                src={require("../../../../../static/Backgrounds/naturedawn.jpg")}
+                src={require("../../static/Backgrounds/naturedawn.jpg")}
                 alt='post Img'
               />
             </a>
