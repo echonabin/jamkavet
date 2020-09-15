@@ -1,0 +1,52 @@
+.container>div {
+    margin-top: 1rem;
+    margin-left: 1rem;
+
+    .__heading {
+        display: grid;
+        grid-template-rows: 4fr 1fr;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        border-bottom: thin solid;
+        border-color: lightgray;
+
+        .__heading_title h3 {
+            font-size: 2em;
+            font-weight: 900;
+            letter-spacing: 0.25em;
+            line-height: 1.65;
+            margin: 0 0 1em 0;
+            text-transform: uppercase;
+            color: #646464;
+        }
+
+        .__heading_title p {
+            color: #646464;
+            font-size: 0.8em;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            line-height: 2.5;
+            margin-top: -1em;
+            margin-bottom: 1em;
+            text-transform: uppercase;
+        }
+    }
+}
+
+._cards {
+    margin-top: 2em;
+    margin-left: 1.5em;
+    width: 25rem;
+
+}
+
+@media screen and (max-width:768px) {
+    ._cards {
+        margin-top: 2em;
+        margin-left: 2em;
+        margin-bottom: 2em;
+        width: 20rem;
+    }
+}

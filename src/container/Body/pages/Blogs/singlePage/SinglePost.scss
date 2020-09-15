@@ -1,0 +1,158 @@
+@import './featured';
+
+.container {
+  font-family: sans-serif;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 3fr 1.5fr;
+  background-color: whitesmoke;
+}
+
+.container>div:nth-of-type(1) {
+  margin: 1rem;
+  background-color: white;
+  border: thin solid;
+  border-color: lightgrey;
+  display: grid;
+  grid-template-rows: 0fr 2fr;
+}
+
+.__article {
+
+  &_date {
+    border-left: thin solid;
+    border-color: lightgray;
+  }
+
+  &_heading {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    border-bottom: thin solid;
+    border-color: lightgray;
+
+  }
+}
+
+section {
+
+  ._content {
+    margin: 1em;
+    font-size: 1.3rem;
+    text-align: justify;
+  }
+}
+
+
+._item-zoom {
+  position: relative;
+  border: 1px thin solid lightgrey;
+  overflow: hidden;
+  width: 50rem;
+  height: 20rem;
+  box-sizing: border-box;
+  margin-left: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+._item-zoom img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  max-width: 100%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+._item-zoom:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.title {
+  padding: 3.75em 3em 3.3em 3em;
+
+  h3 {
+    font-weight: 900;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    line-height: 1.65;
+    color: #3c3b3b;
+  }
+}
+
+.item {
+  margin: 0.1rem;
+  padding: 3.75em 3em 1.75em 3em;
+  min-width: 17em;
+  width: 17em;
+
+  h4 {
+    color: #646464;
+    display: block;
+    font-size: 0.9em;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    margin-top: 0.5em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.author {
+  display: flex;
+
+  .name {
+    font-size: 0.6em;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-top: 1rem;
+  }
+
+  img {
+    margin: 1rem;
+    width: 3em;
+    display: block;
+    border-radius: 100px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .container {
+    display: inline;
+  }
+
+  .container>div:nth-of-type(1) {
+    display: inline;
+  }
+
+  .__article {
+    &_heading {
+      display: inline;
+      border-bottom: thin solid;
+      border-color: lightgray;
+
+    }
+  }
+
+  ._item-zoom {
+    position: relative;
+    border: 1px thin solid lightgrey;
+    overflow: hidden;
+    width: 350px;
+    height: 250px;
+    box-sizing: border-box;
+    margin-left: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}

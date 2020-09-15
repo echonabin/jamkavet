@@ -1,7 +1,12 @@
 import React from "react";
+import SinglePost from "../singlePage/SinglePost";
 
 const People = () => {
-  return <div>This is People page!</div>;
+  return (
+    <>
+      <SinglePost />
+    </>
+  );
 };
 
 export default People;

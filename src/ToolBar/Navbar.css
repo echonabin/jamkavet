@@ -60,3 +60,15 @@ nav.stroke ul li a:hover:after {
     color: orange;
 
 }
+
+@media screen and (max-width:768px) {
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #aaa;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin: 0 10px;
+    }
+}
