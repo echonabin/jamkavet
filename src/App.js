@@ -17,6 +17,7 @@ import Fiction from "./container/Body/pages/Blogs/Fiction/Fiction";
 import BlogsState from "./context/fullblogs/BlogsState";
 import SinglePost from "./components/singlePage/SinglePost";
 import SinglePageState from "./context/singlepage/SinglePageState";
+import SingleTrendCard from "./components/trending/SingleTrendCard";
 
 const App = () => {
   return (
@@ -36,7 +37,16 @@ const App = () => {
                     <Route exact path='/history' component={HistoryPg} />
                     <Route exact path='/fiction' component={Fiction} />
                     <Route path='/videos' exact component={Videos} />
-                    <Route exact path='/:blogId' component={SinglePost} />
+                    <Route
+                      exact
+                      path='/:blogId'
+                      component={withRouter(SinglePost)}
+                    />
+                    <Route
+                      exact
+                      path='/trend/:blogId'
+                      component={withRouter(SingleTrendCard)}
+                    />
 
                     <Route component={ErrorPage} />
                   </Switch>

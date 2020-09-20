@@ -1,12 +1,10 @@
 import React, { useContext, useState } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-
-import "./SinglePost.scss";
 import SinglePageContext from "../../context/singlepage/SinglePageContext";
 import TrendingCard from "../trending/TrendingCard";
 
-const SinglePost = (props) => {
+const SingleTrendCard = (props) => {
   const [author, setAuthor] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [authoricon, setAuthoricon] = useState("");
@@ -84,4 +82,4 @@ const SinglePost = (props) => {
   );
 };
 
-export default withRouter(SinglePost);
+export default withRouter(SingleTrendCard);

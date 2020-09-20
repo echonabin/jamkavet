@@ -1,8 +1,7 @@
 import React from "react";
-import "./Blogs.css";
 import { Link } from "react-router-dom";
 
-const Blog = ({
+const Trend = ({
   item,
   header,
   headlines,
@@ -13,7 +12,7 @@ const Blog = ({
 }) => {
   return (
     <Link
-      to={{ pathname: `/${id}`, hash: `#${header}` }}
+      to={{ pathname: `/trend/${id}`, hash: `#${header}` }}
       className={`item-${item}`}
       style={{ textDecoration: "none" }}>
       <div className='card'>
@@ -36,4 +35,4 @@ const Blog = ({
   );
 };
 
-export default Blog;
+export default Trend;

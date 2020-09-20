@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Blog from "../Blog";
-import "./BlogSingle.css";
+import Trend from "./Trend";
 
-class BlogSingle extends Component {
+class TrendSingle extends Component {
   state = {
     imageUrl: "",
     authorName: "",
@@ -38,7 +37,7 @@ class BlogSingle extends Component {
     console.log(this.state);
     const { id, CardPosition, title, description } = this.props;
     return (
-      <Blog
+      <Trend
         key={id}
         id={id}
         item={CardPosition}
@@ -52,4 +51,4 @@ class BlogSingle extends Component {
   }
 }
 
-export default BlogSingle;
+export default TrendSingle;
