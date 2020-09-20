@@ -11,10 +11,9 @@
 .container>div:nth-of-type(1) {
   margin: 1rem;
   background-color: white;
-  border: thin solid;
-  border-color: lightgrey;
   display: grid;
   grid-template-rows: 0fr 2fr;
+  box-shadow: 0 0 5px #ebebeb;
 }
 
 .__article {
@@ -76,9 +75,9 @@ section {
 
   h3 {
     font-weight: 900;
-    font-size: 2em;
+    font-size: 2.5em;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
+    // letter-spacing: 0.25em;
     line-height: 1.65;
     color: #3c3b3b;
   }
@@ -93,16 +92,20 @@ section {
   h4 {
     color: #646464;
     display: block;
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: 800;
     letter-spacing: 0.25em;
     margin-top: 0.5em;
+    margin-right: 0.5em;
     text-transform: uppercase;
     white-space: nowrap;
   }
 
   a {
     text-decoration: none;
+    color: darkgrey;
+    margin-top: 8em;
+    margin-left: -1em;
   }
 }
 
@@ -110,16 +113,17 @@ section {
   display: flex;
 
   .name {
-    font-size: 0.6em;
+    font-size: 1em;
     font-weight: 400;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     white-space: nowrap;
     margin-top: 1rem;
+    margin-right: .5em;
   }
 
   img {
-    margin: 1rem;
+    margin: .1rem;
     width: 3em;
     display: block;
     border-radius: 100px;
@@ -142,6 +146,18 @@ section {
       border-color: lightgray;
 
     }
+
+    ._content {
+      margin-left: 1em;
+
+      img {
+        width: 20rem;
+      }
+    }
+
+    .skewBtn {
+      margin-left: 7rem;
+    }
   }
 
   ._item-zoom {
@@ -155,4 +171,41 @@ section {
     margin-top: 2em;
     margin-bottom: 2em;
   }
+}
+
+@mixin buttonBG($bg) {
+  border: 2px solid $bg;
+  color: $bg;
+
+  &:hover {
+    background-color: $bg;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.skewBtn {
+  width: 100px;
+  height: 40px;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  transition: .5s;
+  font-size: 24px;
+  border-radius: 5px;
+  font-family: "Lato", sans-serif;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  margin-left: 23rem;
+
+  &:hover {
+    border: none;
+    color: black;
+    font-size: 18px;
+    transform: scale(1.1);
+  }
+}
+
+/* Buttons */
+.purple {
+  @include buttonBG(#cecece);
 }

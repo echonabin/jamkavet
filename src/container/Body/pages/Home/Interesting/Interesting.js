@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import BlogsContext from "../../../../../context/fullblogs/BlogsContext";
-import BlogSingle from "../BlogSinglePage/BlogSingle";
-import HeadingButton from "../../../../../components/Buttons/HeadingButton";
-import PageContainer from "../Layout/Page";
-import TrendingCard from "../../../../../components/trending/TrendingCard";
+import BlogSingle from "../../Blogs/BlogSinglePage/BlogSingle";
 
-class Brand extends Component {
+class Interesting extends Component {
   static contextType = BlogsContext;
   render() {
     const { state } = this.context;
@@ -14,7 +11,8 @@ class Brand extends Component {
       return <h1>Loading.....</h1>;
     }
     const renderedList = state.blogs.data.map((blog) => {
-      if (blog.categories.includes(4)) {
+      console.log("category", blog.categories.toString());
+      if (blog.categories.includes(3)) {
         return (
           <BlogSingle
             id={blog.id}
@@ -29,18 +27,11 @@ class Brand extends Component {
       return null;
     });
     return (
-      <PageContainer>
-        <div className='SingleBlogContainer'>
-          <HeadingButton text='Brand' />
-          <div className='band'>{renderedList}</div>
-        </div>
-        <div className='trending'>
-          <HeadingButton text='trending' />
-          <TrendingCard />
-        </div>
-      </PageContainer>
+      <div className='SingleBlogContainer'>
+        <div className='band'>{renderedList}</div>
+      </div>
     );
   }
 }
 
-export default Brand;
+export default Interesting;

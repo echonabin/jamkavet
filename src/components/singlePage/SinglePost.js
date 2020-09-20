@@ -1,26 +1,49 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { withRouter } from "react-router-dom";
+import axios from "axios";
 
 import "./SinglePost.scss";
-import Blog from "../../container/Body/pages/Blogs/Blog";
+import SinglePageContext from "../../context/singlepage/SinglePageContext";
+import TrendingCard from "../trending/TrendingCard";
 
-const SinglePost = () => {
+const SinglePost = (props) => {
+  const [author, setAuthor] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
+  const [authoricon, setAuthoricon] = useState("");
+
+  const { getBlog } = useContext(SinglePageContext);
+  const [blogId] = useState(props.match.params.blogId);
+  const [historyId] = useState(props);
+  const blog = getBlog(blogId);
+  console.log(props);
+  if (!blog) {
+    return <h1>Loading...</h1>;
+  }
+  const imageItem = axios.get(
+    `http://localhost:8000/wp-json/wp/v2/media/${blog.featured_media}`
+  );
+  const authorName = axios.get(
+    `http://localhost:8000/wp-json/wp/v2/users/${blog.author}`
+  );
+  Promise.all([imageItem, authorName]).then((res) => {
+    setAuthor(res[1].data.name);
+    setThumbnail(res[0].data.media_details.sizes.full.source_url);
+    setAuthoricon(res[1].data.avatar_urls[96]);
+  });
   return (
     <div className='container'>
       {/* Article section */}
       <div className='__article'>
         <div className='__article_heading'>
           <div className='title'>
-            <h3>This will be article heading</h3>
+            <h3>{blog.title.rendered}</h3>
           </div>
           <div className='__article_date'>
             <div className='item'>
-              <h4>Sep 12, 2020 </h4>
+              <h4>{blog.date.slice(0, 10)}</h4>
               <a href='/' className='author'>
-                <span class='name'>Admin</span>
-                <img
-                  src={require("../../static/Icons/mankakura.png")}
-                  alt='icon'
-                />
+                <span class='name'>{author}</span>
+                <img src={authoricon} alt='icon' />
               </a>
             </div>
           </div>
@@ -28,26 +51,17 @@ const SinglePost = () => {
         <section className='_post'>
           <div className='_item-zoom'>
             <a href='/'>
-              <img
-                src={require("../../static/Backgrounds/naturedawn.jpg")}
-                alt='post Img'
-              />
+              <img src={thumbnail} alt='post Img' />
             </a>
           </div>
           <div className='_content'>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt
-              dignissimos maiores eveniet repudiandae rerum aliquid illo vitae
-              ea velit, ducimus dolores voluptas voluptatem fugiat unde iste
-              porro consequuntur ex. Adipisci.
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam
-              architecto, maiores voluptas deserunt aperiam eveniet nisi
-              repellat autem eos? Recusandae maiores facilis, nostrum expedita
-              numquam illo repudiandae tempore similique illum.
-            </p>
+            <div dangerouslySetInnerHTML={{ __html: blog.content.rendered }} />
           </div>
+          <hr />
+
+          <button className='skewBtn purple' onClick={props.history.goBack}>
+            Return
+          </button>
         </section>
       </div>
       {/* Article section end */}
@@ -63,11 +77,11 @@ const SinglePost = () => {
         </div>
         {/* Featured Posts here! */}
         <section className='_cards'>
-          <Blog />
+          <TrendingCard history={historyId} />
         </section>
       </div>
     </div>
   );
 };
 
-export default SinglePost;
+export default withRouter(SinglePost);

@@ -4,6 +4,7 @@ import {
   HANDEL_SET_VIDEOS,
   HANDEL_FEATURE_VIDEOS,
   HANDEL_LOAD_MORE,
+  HANDEL_SET_BLOGS,
 } from "./types";
 export default (state, action) => {
   switch (action.type) {
@@ -32,6 +33,13 @@ export default (state, action) => {
       return {
         ...state,
         maxResults: 16,
+      };
+    //  Blogs Part
+    case HANDEL_SET_BLOGS:
+      return {
+        ...state,
+        blogs: action.payload,
+        isLoading: false,
       };
     default:
       break;
