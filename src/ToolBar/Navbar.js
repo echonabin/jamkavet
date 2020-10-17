@@ -33,8 +33,8 @@ export default function HideAppBar(props) {
               <a href='/'>
                 <img
                   alt='icon'
-                  src={require("../static/Icons/mankakura.png")}
-                  style={{ width: "150px" }}
+                  src={require("../static/logo.png")}
+                  style={{ width: "85px", marginTop: ".5em" }}
                 />
               </a>
               <div className={classes.grow} />

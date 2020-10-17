@@ -25,7 +25,7 @@ const VideoState = (props) => {
       .get("/playlistItems", {
         params: {
           part: "snippet",
-          playlistId: "UUZ9-B7ebuPUc3zfSu7TaDKw",
+          playlistId: "UUfLLnnT4jUUBxtUcUqIKPJQ",
           key: "AIzaSyAuR63mqhbH0EVd73070DpRASuODidLEiQ",
           maxResults: initialstate.maxResults,
         },

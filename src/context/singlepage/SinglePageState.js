@@ -17,7 +17,6 @@ export default class SinglePageState extends Component {
     let tmpBlogs = [...this.state.blogs];
     // eslint-disable-next-line eqeqeq
     const blog = tmpBlogs.find((blog) => blog.id == item);
-    console.log(blog);
     return blog;
   };
   render() {

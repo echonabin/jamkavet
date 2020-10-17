@@ -14,7 +14,6 @@ const PeopleState = (props) => {
 
   useEffect(() => {
     axios.get("http://localhost:8000/wp-json/wp/v2/blog").then((res) => {
-      console.log(res);
       dispatch({
         type: HANDEL_SET_BLOGS,
         payload: res,

@@ -9,11 +9,24 @@ const HomeLayout = ({ children }) => {
       <Grid container>
         <div className='content'>
           <div className='overlay'>
-            <h1>Jamkavhet</h1>
-            <q>Reflection of Insipiration</q>
+            <img
+              src={require("../../../../static/logo.png")}
+              alt='Logo'
+              className='logo'
+            />
+            <h1
+              className='top_head'
+              style={{
+                fontSize: "95px",
+                fontFamily: "Amita, cursive",
+                fontStyle: "italic",
+              }}>
+              जम्काभेट
+            </h1>
+            <q className='top_quote'>Reflection of Insipiration</q>
             <br />
             <a
-              href='https://www.youtube.com/mankakura'
+              href='https://www.youtube.com/channel/UCfLLnnT4jUUBxtUcUqIKPJQ'
               className='btn btn-white btn-animated'>
               Subscribe
             </a>

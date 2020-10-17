@@ -12,7 +12,7 @@ import Interesting from "./Interesting/Interesting";
 import Inspiring from "./Inspiring/Inspiring";
 import Recommended from "./Recommended/Recommended";
 
-const Home = () => {
+const Home = (history) => {
   const state = useContext(VideoContext);
   const videoArray = state.featuredVideo;
   if (!videoArray) {
@@ -26,17 +26,13 @@ const Home = () => {
 
         <Inspiring />
 
-        <LoadMore pageUrl='/inspiring' Title='See More' />
         <HeadingButton text='Interesting' />
 
         <Interesting />
 
-        <LoadMore pageUrl='/interesting' Title='See More' />
         <HeadingButton text='Recommended' />
 
         <Recommended />
-
-        <LoadMore pageUrl='/recommended' Title='See More' />
         <br />
         <div
           style={{
@@ -52,6 +48,7 @@ const Home = () => {
           handelClose={state.handelModalClose}
           selectedVideo={state.selectedVideo}
           handelModalClose={state.handelModalClose}
+          path={history}
         />
         <LoadMore pageUrl='/videos' Title='See More' />
       </HomeLayout>

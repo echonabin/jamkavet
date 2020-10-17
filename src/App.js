@@ -18,6 +18,7 @@ import BlogsState from "./context/fullblogs/BlogsState";
 import SinglePost from "./components/singlePage/SinglePost";
 import SinglePageState from "./context/singlepage/SinglePageState";
 import SingleTrendCard from "./components/trending/SingleTrendCard";
+import ScrollTop from "./components/Scroll/ScrollTop";
 
 const App = () => {
   return (
@@ -27,30 +28,32 @@ const App = () => {
           <SinglePageState>
             <VideoState>
               <BrowserRouter>
-                <CssBaseline />
-                <Layout>
-                  <Switch>
-                    <Route path='/' exact component={Home} />
-                    <Route exact path='/people' component={People} />
-                    <Route exact path='/place' component={Place} />
-                    <Route exact path='/brand' component={Brand} />
-                    <Route exact path='/history' component={HistoryPg} />
-                    <Route exact path='/fiction' component={Fiction} />
-                    <Route path='/videos' exact component={Videos} />
-                    <Route
-                      exact
-                      path='/:blogId'
-                      component={withRouter(SinglePost)}
-                    />
-                    <Route
-                      exact
-                      path='/trend/:blogId'
-                      component={withRouter(SingleTrendCard)}
-                    />
+                <ScrollTop>
+                  <CssBaseline />
+                  <Layout>
+                    <Switch>
+                      <Route path='/' exact component={Home} />
+                      <Route exact path='/people' component={People} />
+                      <Route exact path='/place' component={Place} />
+                      <Route exact path='/brand' component={Brand} />
+                      <Route exact path='/history' component={HistoryPg} />
+                      <Route exact path='/fiction' component={Fiction} />
+                      <Route path='/videos' exact component={Videos} />
+                      <Route
+                        exact
+                        path='/:blogId'
+                        component={withRouter(SinglePost)}
+                      />
+                      <Route
+                        exact
+                        path='/trend/:blogId'
+                        component={withRouter(SingleTrendCard)}
+                      />
 
-                    <Route component={ErrorPage} />
-                  </Switch>
-                </Layout>
+                      <Route component={ErrorPage} />
+                    </Switch>
+                  </Layout>
+                </ScrollTop>
               </BrowserRouter>
             </VideoState>
           </SinglePageState>

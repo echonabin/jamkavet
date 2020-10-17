@@ -3,6 +3,14 @@ import BlogsContext from "../../../../../context/fullblogs/BlogsContext";
 import BlogSingle from "../../Blogs/BlogSinglePage/BlogSingle";
 
 class Inspiring extends Component {
+  state = {
+    visible: 4,
+  };
+  showMoreItems = () => {
+    this.setState({
+      visible: this.state.visible + 4,
+    });
+  };
   static contextType = BlogsContext;
   render() {
     const { state } = this.context;
@@ -10,25 +18,40 @@ class Inspiring extends Component {
     if (state.isLoading) {
       return <h1>Loading.....</h1>;
     }
-    const renderedList = state.blogs.data.map((blog) => {
-      console.log("category", blog.categories.toString());
-      if (blog.categories.includes(3)) {
-        return (
-          <BlogSingle
-            id={blog.id}
-            CardPosition={blog.id}
-            title={blog.title.rendered}
-            description={blog.excerpt.rendered.slice(0, 75) + "...."}
-            mediaItem={blog.featured_media}
-            authorItem={blog.author}
-          />
-        );
-      }
-      return null;
-    });
+    const renderedList = state.blogs.data
+      .slice(0, this.state.visible)
+      .map((blog) => {
+        console.log("category", blog.categories.toString());
+        if (blog.categories.includes(8)) {
+          return (
+            <BlogSingle
+              id={blog.id}
+              CardPosition={blog.id}
+              title={blog.title.rendered}
+              description={blog.excerpt.rendered.slice(0, 75) + "...."}
+              mediaItem={blog.featured_media}
+              authorItem={blog.author}
+            />
+          );
+        }
+        return null;
+      });
     return (
       <div className='SingleBlogContainer'>
         <div className='band'>{renderedList}</div>
+        {this.state.visible >= 4 && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "1.5em",
+              padding: "1em",
+            }}>
+            <button className='btn-primary' onClick={this.showMoreItems}>
+              Load More
+            </button>
+          </div>
+        )}
       </div>
     );
   }

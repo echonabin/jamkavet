@@ -5,7 +5,7 @@ import Loading from "../../../../components/Loading/Loading";
 import VideosList from "./VideosList";
 import VideoContext from "../../../../context/videos/VideosContext";
 
-const Videos = () => {
+const Videos = ({ history }) => {
   const state = useContext(VideoContext);
   const videoItems = state.videos;
   const { items } = videoItems;
@@ -21,9 +21,8 @@ const Videos = () => {
         handelClose={state.handelModalClose}
         selectedVideo={state.selectedVideo}
         handelModalClose={state.handelModalClose}
-        handelLoadMore={state.handelLoadMore}
+        path={history}
       />
-      ;
     </>
   );
 };

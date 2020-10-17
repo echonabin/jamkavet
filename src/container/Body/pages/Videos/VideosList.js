@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid } from "@material-ui/core";
 
 import VideoCard from "./VideoCard";
@@ -11,9 +11,13 @@ const VideosList = ({
   isOpen,
   handelClose,
   selectedVideo,
-  handelLoadMore,
+  path,
 }) => {
-  const renderList = videos.map((video) => {
+  const [visible, setVisible] = useState(8);
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 8);
+  };
+  const renderList = videos.slice(0, visible).map((video) => {
     return (
       <Grid item xs={12} sm={4} md={3} key={video.id}>
         <VideoCard
@@ -31,6 +35,18 @@ const VideosList = ({
         <Grid container spacing={0}>
           {renderList}
         </Grid>
+        {path.location.pathname === "/videos" && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "1em",
+            }}>
+            <button className='btn-primary' onClick={showMoreItems}>
+              Load More
+            </button>
+          </div>
+        )}
       </>
     );
   }
