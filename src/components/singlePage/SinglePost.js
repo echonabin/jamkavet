@@ -42,7 +42,11 @@ const SinglePost = (props) => {
           <div className='__article_date'>
             <div className='item'>
               <h4>{blog.date.slice(0, 10)}</h4>
-              <a href='https://facebook.com/journalistjang' className='author'>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://facebook.com/journalistjang'
+                className='author'>
                 <img src={authoricon} alt='icon' />
                 <span className='name'>{author}</span>
               </a>
