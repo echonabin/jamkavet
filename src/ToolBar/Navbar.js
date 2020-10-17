@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import HideNavBar from "./NavbarHide/HideNavBar";
 import { makeStyles, createMuiTheme, ThemeProvider } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,13 +30,13 @@ export default function HideAppBar(props) {
         <HideNavBar {...props}>
           <AppBar color='primary'>
             <Toolbar className={classes.root}>
-              <a href='/'>
+              <Link to='/'>
                 <img
                   alt='icon'
                   src={require("../static/logo.png")}
                   style={{ width: "85px", marginTop: ".5em" }}
                 />
-              </a>
+              </Link>
               <div className={classes.grow} />
               <nav className='stroke'>
                 <ul>
