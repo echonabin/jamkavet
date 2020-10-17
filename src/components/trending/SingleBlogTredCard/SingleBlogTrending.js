@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import BlogsContext from "../../context/fullblogs/BlogsContext";
-import "./TrendingCard.scss";
+import BlogsContext from "../../../context/fullblogs/BlogsContext";
+import "../TrendingCard.scss";
 import { withRouter } from "react-router-dom";
-import TrendSingle from "./TrendSingle";
+import TrendingCardSingleBlog from "../TrendingCardSingleBlog";
 
-class TrendingCard extends Component {
+class SingleBlogTrending extends Component {
   static contextType = BlogsContext;
   render() {
     const { state } = this.context;
@@ -16,7 +16,7 @@ class TrendingCard extends Component {
       console.log("category", blog.categories.toString());
       if (blog.categories.includes(7)) {
         return (
-          <TrendSingle
+          <TrendingCardSingleBlog
             key={blog.id}
             id={blog.id}
             CardPosition={blog.id}
@@ -29,8 +29,8 @@ class TrendingCard extends Component {
       }
       return null;
     });
-    return <div className='trendContainer'>{renderedList}</div>;
+    return <div className='trendContainer_singleBlog'>{renderedList}</div>;
   }
 }
 
-export default withRouter(TrendingCard);
+export default withRouter(SingleBlogTrending);

@@ -23,7 +23,7 @@ const HomeLayout = ({ children }) => {
               }}>
               जम्काभेट
             </h1>
-            <q className='top_quote'>Reflection of Insipiration</q>
+            <q className='top_quote'>Information Unlimited</q>
             <br />
             <a
               href='https://www.youtube.com/channel/UCfLLnnT4jUUBxtUcUqIKPJQ'

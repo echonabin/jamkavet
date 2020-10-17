@@ -4,13 +4,14 @@ import axios from "axios";
 
 import "./SinglePost.scss";
 import SinglePageContext from "../../context/singlepage/SinglePageContext";
-import TrendingCard from "../trending/TrendingCard";
+import SocialShare from "../SocialShare/SocialShare";
+import SingleBlogTrending from "../trending/SingleBlogTredCard/SingleBlogTrending";
+import HeadingButton from "../Buttons/HeadingButton";
 
 const SinglePost = (props) => {
   const [author, setAuthor] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [authoricon, setAuthoricon] = useState("");
-
   const { getBlog } = useContext(SinglePageContext);
   const [blogId] = useState(props.match.params.blogId);
   const [historyId] = useState(props);
@@ -29,9 +30,9 @@ const SinglePost = (props) => {
     setThumbnail(res[0].data.media_details.sizes.full.source_url);
     setAuthoricon(res[1].data.avatar_urls[96]);
   });
-
   return (
     <div className='container'>
+      {console.log(window.location.href)}
       {/* Article section */}
       <div className='__article'>
         <div className='__article_heading'>
@@ -41,10 +42,16 @@ const SinglePost = (props) => {
           <div className='__article_date'>
             <div className='item'>
               <h4>{blog.date.slice(0, 10)}</h4>
-              <a href='/' className='author'>
-                <span class='name'>{author}</span>
+              <a href='https://facebook.com/journalistjang' className='author'>
                 <img src={authoricon} alt='icon' />
+                <span className='name'>{author}</span>
               </a>
+            </div>
+            <div className='social_share'>
+              <SocialShare
+                url={window.location.href}
+                title={blog.title.rendered}
+              />
             </div>
           </div>
         </div>
@@ -57,27 +64,23 @@ const SinglePost = (props) => {
           <div className='_content'>
             <div dangerouslySetInnerHTML={{ __html: blog.content.rendered }} />
           </div>
-          <hr />
-
           <button className='skewBtn purple' onClick={props.history.goBack}>
             Return
           </button>
+          <div className='social_share'>
+            <SocialShare
+              url={window.location.href}
+              title={blog.title.rendered}
+            />
+          </div>
         </section>
       </div>
       {/* Article section end */}
       <div className='container_featured'>
-        <div className='__heading'>
-          <div className='__heading_title'>
-            <h3>Featured | Recents</h3>
-            <p>Other liked these posts also.</p>
-            <p>
-              <a href='/'>#Recents</a>
-            </p>
-          </div>
-        </div>
+        <HeadingButton text='You May Like' />
         {/* Featured Posts here! */}
         <section className='_cards'>
-          <TrendingCard history={historyId} />
+          <SingleBlogTrending history={historyId} />
         </section>
       </div>
     </div>

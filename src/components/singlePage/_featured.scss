@@ -1,11 +1,11 @@
-.container>div {
-    margin-top: 1rem;
-    margin-left: 1rem;
+.container {
+    .container_featured {
+        margin: 1em;
+    }
 
     .__heading {
         display: grid;
         grid-template-rows: 4fr 1fr;
-        margin: 0;
         padding: 0;
         border: 0;
         font-size: 100%;
@@ -43,11 +43,10 @@
     }
 }
 
-._cards {
-    margin-top: 2em;
-    margin-left: 1em;
-    width: 25rem;
-
+.trendContainer_singleBlog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3em;
 }
 
 @media screen and (max-width:768px) {

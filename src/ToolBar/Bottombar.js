@@ -40,7 +40,7 @@ const Bottombar = () => {
             </span>
           </a>
         </div>
-        &copy; {`Jamkavet ${d.getFullYear()}`}
+        &copy; {`Jamkabhet ${d.getFullYear()}`}
       </footer>
     </div>
   );

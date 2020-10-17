@@ -4,8 +4,9 @@
   font-family: sans-serif;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 3fr 1.5fr;
+  grid-template-rows: 3fr;
   background-color: whitesmoke;
+  padding: 0 6em;
 }
 
 .container>div:nth-of-type(1) {
@@ -19,13 +20,17 @@
 .__article {
 
   &_date {
-    border-left: thin solid;
     border-color: lightgray;
+
+    .social_share {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   &_heading {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr .5fr;
     border-bottom: thin solid;
     border-color: lightgray;
 
@@ -35,18 +40,29 @@
 section {
 
   ._content {
-    margin: 1em;
+    margin: 1em 5em;
     font-size: 1.3rem;
     text-align: justify;
+    line-height: 45px;
+
+    p {
+      font-weight: 400;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+    }
   }
+
+
 }
+
 
 
 ._item-zoom {
   position: relative;
   border: 1px thin solid lightgrey;
   overflow: hidden;
-  width: 50rem;
+  width: 68rem;
   height: 30rem;
   box-sizing: border-box;
   margin-left: 2em;
@@ -71,15 +87,17 @@ section {
 }
 
 .title {
-  padding: 3.75em 3em 3.3em 3em;
+  padding: 0 3em 0 3em;
 
   h3 {
-    font-weight: 900;
-    font-size: 2.5em;
+    font-weight: 700;
+    font-size: 50px;
     text-transform: uppercase;
-    // letter-spacing: 0.25em;
-    line-height: 1.65;
-    color: #3c3b3b;
+    line-height: 60px;
+    color: black;
+    display: block;
+    padding-left: 15px;
+    margin-top: 30px;
   }
 }
 
@@ -95,7 +113,8 @@ section {
     font-size: 1em;
     font-weight: 800;
     letter-spacing: 0.25em;
-    margin-top: 0.5em;
+    margin-top: -5.5em;
+    margin-bottom: 1em;
     margin-right: 0.5em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -104,7 +123,7 @@ section {
   a {
     text-decoration: none;
     color: darkgrey;
-    margin-top: 8em;
+    margin-top: 1em;
     margin-left: -1em;
   }
 }
@@ -128,6 +147,11 @@ section {
     display: block;
     border-radius: 100px;
   }
+}
+
+.social_share {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width:768px) {
@@ -195,7 +219,7 @@ section {
   font-family: "Lato", sans-serif;
   margin-bottom: 1em;
   margin-top: 1em;
-  margin-left: 23rem;
+  margin-left: 33rem;
 
   &:hover {
     border: none;
