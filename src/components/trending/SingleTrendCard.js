@@ -16,7 +16,16 @@ const SingleTrendCard = (props) => {
   const [historyId] = useState(props);
   const blog = getBlog(blogId);
   if (!blog) {
-    return <h1>Loading...</h1>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "50vh",
+        }}>
+        <h1>Loading</h1>
+      </div>
+    );
   }
   const imageItem = axios.get(
     `http://localhost:8000/wp-json/wp/v2/media/${blog.featured_media}`
