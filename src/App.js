@@ -6,7 +6,6 @@ import Layout from "./Layout/Layout";
 import Home from "./container/Body/pages/Home/Home";
 import Videos from "./container/Body/pages/Videos/Videos";
 import ErrorPage from "./container/Error/ErrorPage";
-import BlogState from "./context/blogs/BlogState";
 import VideoState from "./context/videos/VideoState";
 // import SingleBlog from "./container/Body/pages/Blogs/ SingleBlog";
 import HistoryPg from "./container/Body/pages/Blogs/History/HistoryPg";
@@ -23,7 +22,6 @@ import ScrollTop from "./components/Scroll/ScrollTop";
 const App = () => {
   return (
     <>
-      <BlogState>
         <BlogsState>
           <SinglePageState>
             <VideoState>
@@ -56,7 +54,6 @@ const App = () => {
             </VideoState>
           </SinglePageState>
         </BlogsState>
-      </BlogState>
     </>
   );
 };
