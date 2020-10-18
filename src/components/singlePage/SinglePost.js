@@ -7,6 +7,7 @@ import SinglePageContext from "../../context/singlepage/SinglePageContext";
 import SocialShare from "../SocialShare/SocialShare";
 import SingleBlogTrending from "../trending/SingleBlogTredCard/SingleBlogTrending";
 import HeadingButton from "../Buttons/HeadingButton";
+import ModalImage from 'react-modal-image'
 
 const SinglePost = (props) => {
   const [author, setAuthor] = useState("");
@@ -70,9 +71,7 @@ const SinglePost = (props) => {
         </div>
         <section className='_post'>
           <div className='_item-zoom'>
-            <a href={thumbnail}>
-              <img src={thumbnail} alt='post Img' />
-            </a>
+          <ModalImage small={thumbnail} large={thumbnail} alt={blog.title.rendered} />
           </div>
           <div className='_content'>
             <div dangerouslySetInnerHTML={{ __html: blog.content.rendered }} />
