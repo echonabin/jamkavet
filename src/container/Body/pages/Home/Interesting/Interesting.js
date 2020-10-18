@@ -14,17 +14,16 @@ class Interesting extends Component {
   static contextType = BlogsContext;
   render() {
     const { state } = this.context;
-    console.log(state);
     if (state.isLoading) {
       return <h1>Loading.....</h1>;
     }
     const renderedList = state.blogs.data
       .slice(0, this.state.visible)
       .map((blog) => {
-        console.log("category", blog.categories.toString());
         if (blog.categories.includes(9)) {
           return (
             <BlogSingle
+              key={blog.id}
               id={blog.id}
               CardPosition={blog.id}
               title={blog.title.rendered}

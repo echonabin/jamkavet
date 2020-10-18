@@ -8,7 +8,7 @@ const Bottombar = () => {
       <footer className='footer'>
         <div className='social-buttons'>
           <a
-            href='https://www.facebook.com/mankaakura'
+            href='https://www.facebook.com/Jamkaabhet/'
             className='social-buttons__button social-button social-button--facebook'
             aria-label='Facebook'>
             <span className='social-button__inner'>
@@ -32,7 +32,7 @@ const Bottombar = () => {
             </span>
           </a>
           <a
-            href='https://www.youtube.com/mankakura'
+            href='https://www.youtube.com/channel/UCfLLnnT4jUUBxtUcUqIKPJQ'
             className='social-buttons__button social-button social-button--youtube'
             aria-label='Youtube'>
             <span className='social-button__inner'>

@@ -10,7 +10,6 @@ class Place extends Component {
   static contextType = BlogsContext;
   render() {
     const { state } = this.context;
-    console.log(state);
     if (state.isLoading) {
       return <h1>Loading.....</h1>;
     }
@@ -18,6 +17,7 @@ class Place extends Component {
       if (blog.categories.includes(2)) {
         return (
           <BlogSingle
+            key={blog.id}
             category={blog.categories}
             id={blog.id}
             CardPosition={blog.id}

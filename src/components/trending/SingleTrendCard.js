@@ -41,7 +41,6 @@ const SingleTrendCard = (props) => {
 
   return (
     <div className='container'>
-      {console.log(window.location.href)}
       {/* Article section */}
       <div className='__article'>
         <div className='__article_heading'>

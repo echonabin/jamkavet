@@ -10,7 +10,6 @@ class Brand extends Component {
   static contextType = BlogsContext;
   render() {
     const { state } = this.context;
-    console.log(state);
     if (state.isLoading) {
       return <h1>Loading.....</h1>;
     }
@@ -18,6 +17,7 @@ class Brand extends Component {
       if (blog.categories.includes(4)) {
         return (
           <BlogSingle
+            key={blog.id}
             id={blog.id}
             CardPosition={blog.id}
             title={blog.title.rendered}

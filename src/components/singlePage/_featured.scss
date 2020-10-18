@@ -52,8 +52,28 @@
 @media screen and (max-width:768px) {
     ._cards {
         margin-top: 2em;
-        margin-left: 2em;
+        margin-left: 1em;
         margin-bottom: 2em;
         width: 20rem;
+    }
+    .trendContainer_singleBlog {
+        display: inline;
+    }
+    .container{
+        .__heading {
+            display: inline;
+            font-size: 100%;
+            border-bottom: thin solid;
+            border-color: lightgray;
+        } 
+        .__heading_title h3 {
+            font-size: 2em;
+            font-weight: 900;
+            letter-spacing: 0.25em;
+            line-height: 1.65;
+            margin: 0 0 1em 0;
+            text-transform: uppercase;
+            color: #646464;
+        }
     }
 }

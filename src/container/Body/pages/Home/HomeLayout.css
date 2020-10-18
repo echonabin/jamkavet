@@ -87,3 +87,20 @@ h3 {
     color: white;
     font-size: 14px;
 }
+
+@media only screen and (max-width: 768px) {
+    .top_head {
+        display: none;
+    }
+    .logo {
+        width: 20rem;
+        display: block;
+        margin-left: -6rem;
+        margin-bottom: -3rem;
+        opacity: 0.8;
+    }
+    .top_quote {
+        display: none;
+    
+    }
+  }

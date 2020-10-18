@@ -11,7 +11,6 @@ class BlogSingle extends Component {
   };
   componentDidMount() {
     const { mediaItem, authorItem } = this.props;
-    console.log(mediaItem, authorItem);
     const imageItem = axios.get(
       `http://localhost:8000/wp-json/wp/v2/media/${mediaItem}`
     );
@@ -35,7 +34,6 @@ class BlogSingle extends Component {
     });
   }
   render() {
-    console.log(this.state);
     const { id, CardPosition, title, description } = this.props;
     return (
       <Blog
