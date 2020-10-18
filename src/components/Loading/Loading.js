@@ -1,16 +1,12 @@
-import React from "react";
-import "./Loading.css";
-const Loading = () => {
-  return (
-    <div className='gooey'>
-      <span className='dot'></span>
-      <div className='dots'>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  );
-};
+import React from 'react'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-export default Loading;
+const Loading = (props) => {
+  return (
+    <div style={{display: "flex", justifyContent:"center", marginTop:"32vh", marginBottom:"32vh"}}><CircularProgress color="secondary" />
+    {props.children}
+    </div>
+  )
+}
+
+export default Loading

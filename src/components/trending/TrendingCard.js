@@ -3,6 +3,7 @@ import BlogsContext from "../../context/fullblogs/BlogsContext";
 import "./TrendingCard.scss";
 import { withRouter } from "react-router-dom";
 import TrendSingle from "./TrendSingle";
+import Loading from "../Loading/Loading";
 
 class TrendingCard extends Component {
   state = {
@@ -17,7 +18,7 @@ class TrendingCard extends Component {
   render() {
     const { state } = this.context;
     if (state.isLoading) {
-      return <h1>Loading.....</h1>;
+      return <Loading />;
     }
     const renderedList = state.blogs.data.slice(0, this.state.visible).map((blog) => {
       if (blog.categories.includes(7)) {

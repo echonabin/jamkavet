@@ -5,6 +5,7 @@ import SinglePageContext from "../../context/singlepage/SinglePageContext";
 import SingleBlogTrending from "./SingleBlogTredCard/SingleBlogTrending";
 import SocialShare from "../SocialShare/SocialShare";
 import HeadingButton from "../Buttons/HeadingButton";
+import Loading from "../Loading/Loading";
 
 const SingleTrendCard = (props) => {
   const [author, setAuthor] = useState("");
@@ -17,14 +18,7 @@ const SingleTrendCard = (props) => {
   const blog = getBlog(blogId);
   if (!blog) {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "50vh",
-        }}>
-        <h1>Loading</h1>
-      </div>
+      <Loading />
     );
   }
   const imageItem = axios.get(

@@ -5,18 +5,18 @@ import HomeLayout from "./HomeLayout";
 import HeadingButton from "../../../../components/Buttons/HeadingButton";
 import "../Blogs/Blogs.css";
 import LoadMore from "../../../../components/Buttons/LoadMore";
-import Loading from "../../../../components/Loading/Loading";
 import VideoContext from "../../../../context/videos/VideosContext";
 import VideosList from "../Videos/VideosList";
 import Interesting from "./Interesting/Interesting";
 import Inspiring from "./Inspiring/Inspiring";
 import Recommended from "./Recommended/Recommended";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Home = (history) => {
   const state = useContext(VideoContext);
   const videoArray = state.featuredVideo;
   if (!videoArray) {
-    return <Loading />;
+    return <CircularProgress color="secondary" />;
   }
   return (
     <>
