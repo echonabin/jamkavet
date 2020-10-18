@@ -52,6 +52,10 @@
     color: #333;
 }
 
+.card h1:hover{
+    color: rgba(250, 68, 2, 0.767);
+}
+
 .card p {
     flex: 1;
     line-height: 1.4;

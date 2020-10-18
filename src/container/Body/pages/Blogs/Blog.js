@@ -25,7 +25,6 @@ const Blog = ({
         />
         <article>
           <h1>{header}</h1>
-          <div dangerouslySetInnerHTML={{ __html: headlines }} />
           <span>
             <img src={authorIcon} alt='author' />
             {author}
