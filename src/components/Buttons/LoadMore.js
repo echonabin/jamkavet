@@ -10,6 +10,7 @@ const LoadMore = ({ pageUrl, Title }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        paddingBottom: "10px",
       }}>
       <Link to={pageUrl} className='btn-primary'>
         {Title}
