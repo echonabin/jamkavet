@@ -26,6 +26,8 @@ const HomeLayout = ({ children }) => {
             <q className='top_quote'>Information Unlimited</q>
             <br />
             <a
+              target="_blank"
+              rel="noopener noreferrer"
               href='https://www.youtube.com/channel/UCfLLnnT4jUUBxtUcUqIKPJQ'
               className='btn btn-white btn-animated'>
               Subscribe

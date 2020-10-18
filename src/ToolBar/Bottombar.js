@@ -9,6 +9,8 @@ const Bottombar = () => {
         <div className='social-buttons'>
           <a
             href='https://www.facebook.com/Jamkaabhet/'
+            target="_blank"
+            rel="noopener noreferrer"
             className='social-buttons__button social-button social-button--facebook'
             aria-label='Facebook'>
             <span className='social-button__inner'>
@@ -17,6 +19,8 @@ const Bottombar = () => {
           </a>
           <a
             href='/'
+            target="_blank"
+            rel="noopener noreferrer"
             className='social-buttons__button social-button social-button--twitter'
             aria-label='Twitter'>
             <span className='social-button__inner'>
@@ -25,6 +29,8 @@ const Bottombar = () => {
           </a>
           <a
             href='/'
+            target="_blank"
+            rel="noopener noreferrer"
             className='social-buttons__button social-button social-button--instagram'
             aria-label='Instagram'>
             <span className='social-button__inner'>
@@ -33,6 +39,8 @@ const Bottombar = () => {
           </a>
           <a
             href='https://www.youtube.com/channel/UCfLLnnT4jUUBxtUcUqIKPJQ'
+            target="_blank"
+            rel="noopener noreferrer"
             className='social-buttons__button social-button social-button--youtube'
             aria-label='Youtube'>
             <span className='social-button__inner'>
