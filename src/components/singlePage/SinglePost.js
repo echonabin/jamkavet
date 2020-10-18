@@ -71,7 +71,7 @@ const SinglePost = (props) => {
         </div>
         <section className='_post'>
           <div className='_item-zoom'>
-          <ModalImage small={thumbnail} large={thumbnail} alt={blog.title.rendered} />
+          <ModalImage small={thumbnail} large={thumbnail} alt={blog.excerpt.rendered.slice(3,-5)} />
           </div>
           <div className='_content'>
             <div dangerouslySetInnerHTML={{ __html: blog.content.rendered }} />
