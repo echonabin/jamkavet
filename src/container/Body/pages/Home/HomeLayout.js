@@ -9,20 +9,12 @@ const HomeLayout = ({ children }) => {
       <Grid container>
         <div className='content'>
           <div className='overlay'>
+            <div style={{margin: "-108px"}}>
             <img
-              src={require("../../../../static/logoOnly.png")}
+              src={require("../../../../static/logoTop.png")}
               alt='Logo'
               className='logo'
             />
-            <h1
-              className='top_head'
-              style={{
-                fontSize: "95px",
-                fontFamily: "Amita, cursive",
-                fontStyle: "italic",
-              }}>
-              जम्काभेट
-            </h1>
             <q className='top_quote'>Information Unlimited</q>
             <br />
             <a
@@ -32,6 +24,7 @@ const HomeLayout = ({ children }) => {
               className='btn btn-white btn-animated'>
               Subscribe
             </a>
+            </div>
           </div>
         </div>
         <Container>{children}</Container>

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#f5f5f5",
+      main: "#e4e4e4",
     },
   },
 });
@@ -28,15 +28,25 @@ export default function HideAppBar(props) {
     <>
       <ThemeProvider theme={theme}>
         <HideNavBar {...props}>
-          <AppBar color='primary'>
+          <AppBar color='primary' style={{padding:"20px"}}>
             <Toolbar className={classes.root}>
-              <Link to='/'>
-                <img
-                  alt='icon'
-                  src={require("../static/logo.png")}
-                  style={{ width: "85px", marginTop: ".5em" }}
-                />
+              <div style={{marginBottom: "-32px",marginTop: "-38px"}}>
+              <Link to='/' style={{textDecoration: "none"}}>
+                <img src={require("../static/logoOnly.png")} alt="logo" style={{width:"60px"}}/>
+              <h1
+              className='top_head'
+              style={{
+                fontSize: "35px",
+                fontFamily: "Amita, cursive",
+                fontStyle: "italic",
+                color:"#FFF",
+                textShadow: "1px 1px 1px #333",
+                margin: "-30px"
+              }}>
+              जम्काभेट
+            </h1>
               </Link>
+            </div>
               <div className={classes.grow} />
               <nav className='stroke'>
                 <ul>
