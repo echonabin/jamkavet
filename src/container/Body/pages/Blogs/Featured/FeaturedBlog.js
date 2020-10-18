@@ -1,7 +1,9 @@
 import React from "react";
 
 import "./FeaturedBlog.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+
+
 const FeaturedBlog = ({ item, header, headlines, author, thumbnail, id }) => {
   const urlForImage = "http://localhost:1337";
   return (
@@ -28,4 +30,4 @@ const FeaturedBlog = ({ item, header, headlines, author, thumbnail, id }) => {
   );
 };
 
-export default FeaturedBlog;
+export default withRouter(FeaturedBlog);

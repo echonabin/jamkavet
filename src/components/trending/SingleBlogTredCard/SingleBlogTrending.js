@@ -5,6 +5,14 @@ import { withRouter } from "react-router-dom";
 import TrendingCardSingleBlog from "../TrendingCardSingleBlog";
 
 class SingleBlogTrending extends Component {
+  state = {
+    visible: 4,
+  };
+  showMoreItems = () => {
+    this.setState({
+      visible: this.state.visible + 4,
+    });
+  };
   static contextType = BlogsContext;
   render() {
     const { state } = this.context;
@@ -12,7 +20,7 @@ class SingleBlogTrending extends Component {
     if (state.isLoading) {
       return <h1>Loading.....</h1>;
     }
-    const renderedList = state.blogs.data.map((blog) => {
+    const renderedList = state.blogs.data.slice(0, this.state.visible).map((blog) => {
       console.log("category", blog.categories.toString());
       if (blog.categories.includes(7)) {
         return (
@@ -29,7 +37,20 @@ class SingleBlogTrending extends Component {
       }
       return null;
     });
-    return <div className='trendContainer_singleBlog'>{renderedList}</div>;
+    return <>
+    <div className='trendContainer_singleBlog'>{renderedList}</div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "1.5em",
+              padding: "1em",
+            }}>
+            <button className='btn-primary' onClick={this.showMoreItems}>
+              Load More
+            </button>
+          </div>
+    </>;
   }
 }
 

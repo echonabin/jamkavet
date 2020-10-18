@@ -4,6 +4,7 @@ import BlogSingle from "../BlogSinglePage/BlogSingle";
 import HeadingButton from "../../../../../components/Buttons/HeadingButton";
 import PageContainer from "../Layout/Page";
 import TrendingCard from "../../../../../components/trending/TrendingCard";
+import {withRouter} from 'react-router-dom'
 
 class Brand extends Component {
   static contextType = BlogsContext;
@@ -43,4 +44,4 @@ class Brand extends Component {
   }
 }
 
-export default Brand;
+export default withRouter(Brand);

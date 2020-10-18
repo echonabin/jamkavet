@@ -4,6 +4,7 @@ import BlogSingle from "../BlogSinglePage/BlogSingle";
 import HeadingButton from "../../../../../components/Buttons/HeadingButton";
 import PageContainer from "../Layout/Page";
 import TrendingCard from "../../../../../components/trending/TrendingCard";
+import {withRouter} from 'react-router-dom'
 
 class HistoryPg extends Component {
   static contextType = BlogsContext;
@@ -43,4 +44,4 @@ class HistoryPg extends Component {
   }
 }
 
-export default HistoryPg;
+export default withRouter(HistoryPg);

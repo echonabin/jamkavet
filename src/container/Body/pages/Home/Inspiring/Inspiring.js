@@ -39,7 +39,6 @@ class Inspiring extends Component {
     return (
       <div className='SingleBlogContainer'>
         <div className='band'>{renderedList}</div>
-        {this.state.visible >= 4 && (
           <div
             style={{
               display: "flex",
@@ -51,7 +50,6 @@ class Inspiring extends Component {
               Load More
             </button>
           </div>
-        )}
       </div>
     );
   }

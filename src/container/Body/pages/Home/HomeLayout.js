@@ -10,7 +10,7 @@ const HomeLayout = ({ children }) => {
         <div className='content'>
           <div className='overlay'>
             <img
-              src={require("../../../../static/logo.png")}
+              src={require("../../../../static/logoOnly.png")}
               alt='Logo'
               className='logo'
             />

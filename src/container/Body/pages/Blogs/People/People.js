@@ -5,6 +5,7 @@ import HeadingButton from "../../../../../components/Buttons/HeadingButton";
 import "./People.css";
 import PageContainer from "../Layout/Page";
 import TrendingCard from "../../../../../components/trending/TrendingCard";
+import {withRouter} from 'react-router-dom'
 
 class People extends Component {
   static contextType = BlogsContext;
@@ -46,4 +47,4 @@ class People extends Component {
   }
 }
 
-export default People;
+export default withRouter(People);
