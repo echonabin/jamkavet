@@ -1,6 +1,6 @@
 import React from "react";
 import { CssBaseline } from "@material-ui/core";
-import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 
 import Layout from "./Layout/Layout";
 import Home from "./container/Body/pages/Home/Home";
@@ -33,23 +33,21 @@ const App = () => {
                   <Layout>
                     <Switch>
                       <Route path='/' exact component={Home} />
-                      <Route exact path='/people' component={People} />
-                      <Route exact path='/place' component={Place} />
-                      <Route exact path='/brand' component={Brand} />
-                      <Route exact path='/history' component={HistoryPg} />
-                      <Route exact path='/fiction' component={Fiction} />
+                      <Route  path='/people' component={People} />
+                      <Route  path='/place' component={Place} />
+                      <Route  path='/brand' component={Brand} />
+                      <Route  path='/history' component={HistoryPg} />
+                      <Route  path='/fiction' component={Fiction} />
                       <Route path='/videos' exact component={Videos} />
                       <Route
                         exact
                         path='/:blogId'
-                        component={withRouter(SinglePost)}
+                        component={SinglePost}
                       />
                       <Route
-                        exact
-                        path='/trend/:blogId'
-                        component={withRouter(SingleTrendCard)}
+                      path={`/trend/:blogId`}
+                        component={SingleTrendCard}
                       />
-
                       <Route component={ErrorPage} />
                     </Switch>
                   </Layout>

@@ -70,7 +70,7 @@ const SinglePost = (props) => {
         </div>
         <section className='_post'>
           <div className='_item-zoom'>
-            <a href='/'>
+            <a href={thumbnail}>
               <img src={thumbnail} alt='post Img' />
             </a>
           </div>
