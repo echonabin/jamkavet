@@ -16,7 +16,7 @@ nav ul li a {
     display: block;
     padding: 4px;
     text-decoration: none;
-    color: rgb(138, 131, 131);
+    color: rgb(1, 2, 1);
     font-weight: 800;
     text-transform: uppercase;
     margin: 0 10px;
@@ -29,7 +29,7 @@ nav ul li a:before {
 }
 
 nav ul li a:hover {
-    color: #555;
+    color: rgb(255, 253, 253);
 }
 
 
@@ -57,7 +57,7 @@ nav.stroke ul li a:hover:after {
 }
 
 .active {
-    color: #d62828;
+    color: #ffffff;
 
 }
 /* Mobile nav */
@@ -71,14 +71,14 @@ nav.stroke ul li a:hover:after {
     padding: 4px;
     padding-top: 15px;
     text-decoration: none;
-    color: rgb(138, 131, 131);
+    color: rgb(2 ,1, 1);
     font-weight: 800;
     text-transform: uppercase;
     margin: 0 10px;
 
 }
 .mobile_nav .active {
-    color: #d62828;
+    color: #ffffff;
 
 }
 
