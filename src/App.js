@@ -31,11 +31,11 @@ const App = () => {
                   <Layout>
                     <Switch>
                       <Route path='/' exact component={Home} />
-                      <Route  path='/people' component={People} />
-                      <Route  path='/place' component={Place} />
-                      <Route  path='/brand' component={Brand} />
-                      <Route  path='/history' component={HistoryPg} />
-                      <Route  path='/fiction' component={Fiction} />
+                      <Route exact path='/people' component={People} />
+                      <Route exact path='/place' component={Place} />
+                      <Route exact path='/brand' component={Brand} />
+                      <Route exact path='/history' component={HistoryPg} />
+                      <Route exact path='/fiction' component={Fiction} />
                       <Route path='/videos' exact component={Videos} />
                       <Route
                         exact

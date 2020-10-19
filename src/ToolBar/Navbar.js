@@ -1,10 +1,13 @@
-import React from "react";
+import React,{useState} from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import HideNavBar from "./NavbarHide/HideNavBar";
 import { makeStyles, createMuiTheme, ThemeProvider } from "@material-ui/core";
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
+import NavItems from "./NavItems";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -23,6 +26,10 @@ const theme = createMuiTheme({
 });
 
 export default function HideAppBar(props) {
+  const[showMenu, setShowMenu] = useState(false)
+  const handelDrawerToggle = () =>{
+    setShowMenu(!showMenu)
+  }
   const classes = useStyles();
   return (
     <>
@@ -48,33 +55,42 @@ export default function HideAppBar(props) {
               </Link>
             </div>
               <div className={classes.grow} />
-              <nav className='stroke'>
+              {window.innerHeight >= 700 && <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handelDrawerToggle}
+            edge="start"
+          >
+            <MenuIcon />
+          </IconButton>}
+              {showMenu && <div style={{display: "flex", flexDirection:"column"}} className="mobile_nav">
                 <ul>
-                  <li>
-                    <NavLink to='/' exact>
-                      Home
-                    </NavLink>
+                <li>
+                <NavLink to="/" activeClassName="active" exact onClick={handelDrawerToggle}>Home</NavLink>
+                </li>
+                <li>
+                <NavLink to="/people" activeClassName="active" onClick={handelDrawerToggle}>People</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/place' onClick={handelDrawerToggle}>Place</NavLink>
                   </li>
                   <li>
-                    <NavLink to='/people'>People</NavLink>
+                    <NavLink to='/brand' onClick={handelDrawerToggle}>Brand</NavLink>
                   </li>
                   <li>
-                    <NavLink to='/place'>Place</NavLink>
+                    <NavLink to='/history' onClick={handelDrawerToggle}>History</NavLink>
                   </li>
                   <li>
-                    <NavLink to='/brand'>Brand</NavLink>
+                    <NavLink to='/fiction' onClick={handelDrawerToggle}>Fiction</NavLink>
                   </li>
                   <li>
-                    <NavLink to='/history'>History</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/fiction'>Fiction</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/videos'>Videos</NavLink>
+                    <NavLink to='/videos' onClick={handelDrawerToggle}>Videos</NavLink>
                   </li>
                 </ul>
-              </nav>
+                {window.onscroll = handelDrawerToggle}
+              </div>}
+              
+              <NavItems />
             </Toolbar>
           </AppBar>
         </HideNavBar>

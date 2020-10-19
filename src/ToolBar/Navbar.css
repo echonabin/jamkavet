@@ -60,15 +60,31 @@ nav.stroke ul li a:hover:after {
     color: #d62828;
 
 }
+/* Mobile nav */
+.mobile_nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile_nav ul li a {
+    display: block;
+    padding: 4px;
+    padding-top: 15px;
+    text-decoration: none;
+    color: rgb(138, 131, 131);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+
+}
+.mobile_nav .active {
+    color: #d62828;
+
+}
+
 
 @media screen and (max-width:768px) {
-    nav ul li a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #aaa;
-        font-weight: 800;
-        text-transform: uppercase;
-        margin: 0 10px;
+    nav{
+        display: none;
     }
 }
