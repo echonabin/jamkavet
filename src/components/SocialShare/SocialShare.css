@@ -1,0 +1,12 @@
+.share_button{
+    transition: all 0.2s;
+}
+.share_button .react-share__ShareButton:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.share_button .react-share__ShareButton:active{
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

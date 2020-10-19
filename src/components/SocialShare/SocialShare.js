@@ -11,9 +11,11 @@ import {
   FacebookMessengerShareButton,
 } from "react-share";
 
+import './SocialShare.css'
+
 const SocialShare = ({ url, title }) => {
   return (
-    <>
+    <div className="share_button">
       <FacebookShareButton url={url} quote={title}>
         <FacebookIcon size={30} />
         <FacebookShareCount url={url} />
@@ -27,7 +29,7 @@ const SocialShare = ({ url, title }) => {
       <FacebookMessengerShareButton url={url} quote={title}>
         <FacebookMessengerIcon size={30} />
       </FacebookMessengerShareButton>
-    </>
+    </div>
   );
 };
 
