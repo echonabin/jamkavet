@@ -8,13 +8,21 @@ import {withRouter} from 'react-router-dom'
 import Loading from "../../../../../components/Loading/Loading";
 
 class Fiction extends Component {
+  state = {
+    visible: 8,
+  };
+  showMoreItems = () => {
+    this.setState({
+      visible: this.state.visible + 8,
+    });
+  };
   static contextType = BlogsContext;
   render() {
     const { state } = this.context;
     if (state.isLoading) {
       return <Loading />;
     }
-    const renderedList = state.blogs.data.map((blog) => {
+    const renderedList = state.blogs.data.slice(0, this.state.visible).map((blog) => {
       if (blog.categories.includes(6)) {
         return (
           <BlogSingle
@@ -35,6 +43,17 @@ class Fiction extends Component {
         <div className='SingleBlogContainer'>
           <HeadingButton text='Fiction' />
           <div className='band'>{renderedList}</div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "1.5em",
+              padding: "1em",
+            }}>
+            <button className='btn-primary' onClick={this.showMoreItems}>
+              Load More
+            </button>
+          </div>
         </div>
         <div className='trending'>
           <HeadingButton text='trending' />

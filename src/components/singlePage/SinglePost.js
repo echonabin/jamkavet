@@ -8,6 +8,7 @@ import SocialShare from "../SocialShare/SocialShare";
 import SingleBlogTrending from "../trending/SingleBlogTredCard/SingleBlogTrending";
 import HeadingButton from "../Buttons/HeadingButton";
 import ModalImage from 'react-modal-image'
+import Loading from '../Loading/Loading'
 
 const SinglePost = (props) => {
   const [author, setAuthor] = useState("");
@@ -19,14 +20,7 @@ const SinglePost = (props) => {
   const blog = getBlog(blogId);
   if (!blog) {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "50vh",
-        }}>
-        <h1>Loading</h1>
-      </div>
+      <Loading />
     );
   }
   const imageItem = axios.get(

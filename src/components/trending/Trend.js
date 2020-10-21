@@ -25,7 +25,6 @@ const Trend = ({
         />
         <article>
           <h1>{header}</h1>
-          <div dangerouslySetInnerHTML={{ __html: headlines }} />
           <span>
             {author}
             <img src={authorIcon} alt='author' />

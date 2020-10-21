@@ -6,6 +6,7 @@ import SingleBlogTrending from "./SingleBlogTredCard/SingleBlogTrending";
 import SocialShare from "../SocialShare/SocialShare";
 import HeadingButton from "../Buttons/HeadingButton";
 import Loading from "../Loading/Loading";
+import ModalImage from 'react-modal-image'
 
 const SingleTrendCard = (props) => {
   const [author, setAuthor] = useState("");
@@ -59,9 +60,7 @@ const SingleTrendCard = (props) => {
         </div>
         <section className='_post'>
           <div className='_item-zoom'>
-            <a href='/'>
-              <img src={thumbnail} alt='post Img' />
-            </a>
+          <ModalImage small={thumbnail} large={thumbnail} alt={blog.title.rendered} />
           </div>
           <div className='_content'>
             <div dangerouslySetInnerHTML={{ __html: blog.content.rendered }} />
