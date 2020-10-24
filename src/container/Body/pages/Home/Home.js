@@ -10,27 +10,27 @@ import VideosList from "../Videos/VideosList";
 import Interesting from "./Interesting/Interesting";
 import Inspiring from "./Inspiring/Inspiring";
 import Recommended from "./Recommended/Recommended";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Home = (history) => {
   const state = useContext(VideoContext);
   const videoArray = state.featuredVideo;
   if (!videoArray) {
-    return <CircularProgress color="secondary" />;
+    return <CircularProgress color='secondary' />;
   }
   return (
     <>
       <HomeLayout>
         {/* Remember there should only be 3 items on each */}
-        <HeadingButton text='Inspiring' />
+        <HeadingButton text='नयाँनाैलाे' />
 
         <Inspiring />
 
-        <HeadingButton text='Interesting' />
+        <HeadingButton text='संघर्ष र सफलता' />
 
         <Interesting />
 
-        <HeadingButton text='Recommended' />
+        <HeadingButton text='पत्रपत्रिका' />
 
         <Recommended />
         <br />
@@ -40,7 +40,7 @@ const Home = (history) => {
             alignItems: "center",
             justifyContent: "center",
           }}></div>
-        <HeadingButton text='Featured Videos' />
+        <HeadingButton text='जम्काभेट युट्युब च्यानल' />
         <VideosList
           onVideoSelect={state.handelVideoSelect}
           videos={videoArray}

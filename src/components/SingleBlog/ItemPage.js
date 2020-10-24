@@ -18,10 +18,10 @@ class ItemPage extends Component {
     console.log(mediaItem);
     console.log(authorItem);
     const imageItem = axios.get(
-      `http://localhost:8000/wp-json/wp/v2/media/${mediaItem}`
+      `https://api.jamkabhet.com/wp-json/wp/v2/media/${mediaItem}`
     );
     const authorName = axios.get(
-      `http://localhost:8000/wp-json/wp/v2/users/${authorItem}`
+      `https://api.jamkabhet.com/wp-json/wp/v2/users/${authorItem}`
     );
     Promise.all([imageItem, authorName]).then((res) => {
       this.setState({

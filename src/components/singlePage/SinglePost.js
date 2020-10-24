@@ -7,8 +7,8 @@ import SinglePageContext from "../../context/singlepage/SinglePageContext";
 import SocialShare from "../SocialShare/SocialShare";
 import SingleBlogTrending from "../trending/SingleBlogTredCard/SingleBlogTrending";
 import HeadingButton from "../Buttons/HeadingButton";
-import ModalImage from 'react-modal-image'
-import Loading from '../Loading/Loading'
+import ModalImage from "react-modal-image";
+import Loading from "../Loading/Loading";
 
 const SinglePost = (props) => {
   const [author, setAuthor] = useState("");
@@ -19,15 +19,13 @@ const SinglePost = (props) => {
   const [historyId] = useState(props);
   const blog = getBlog(blogId);
   if (!blog) {
-    return (
-      <Loading />
-    );
+    return <Loading />;
   }
   const imageItem = axios.get(
-    `http://localhost:8000/wp-json/wp/v2/media/${blog.featured_media}`
+    `https://api.jamkabhet.com/wp-json/wp/v2/media/${blog.featured_media}`
   );
   const authorName = axios.get(
-    `http://localhost:8000/wp-json/wp/v2/users/${blog.author}`
+    `https://api.jamkabhet.com/wp-json/wp/v2/users/${blog.author}`
   );
   Promise.all([imageItem, authorName]).then((res) => {
     setAuthor(res[1].data.name);
@@ -65,7 +63,11 @@ const SinglePost = (props) => {
         </div>
         <section className='_post'>
           <div className='_item-zoom'>
-          <ModalImage small={thumbnail} large={thumbnail} alt={blog.title.rendered} />
+            <ModalImage
+              small={thumbnail}
+              large={thumbnail}
+              alt={blog.title.rendered}
+            />
           </div>
           <div className='_content'>
             <div dangerouslySetInnerHTML={{ __html: blog.content.rendered }} />

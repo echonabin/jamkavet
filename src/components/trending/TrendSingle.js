@@ -11,10 +11,10 @@ class TrendSingle extends Component {
   componentDidMount() {
     const { mediaItem, authorItem } = this.props;
     const imageItem = axios.get(
-      `http://localhost:8000/wp-json/wp/v2/media/${mediaItem}`
+      `https://api.jamkabhet.com/wp-json/wp/v2/media/${mediaItem}`
     );
     const authorName = axios.get(
-      `http://localhost:8000/wp-json/wp/v2/users/${authorItem}`
+      `https://api.jamkabhet.com/wp-json/wp/v2/users/${authorItem}`
     );
     Promise.all([imageItem, authorName]).then((res) => {
       if (res[0].data.media_details.sizes.medium_large) {

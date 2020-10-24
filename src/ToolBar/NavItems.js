@@ -1,36 +1,33 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavItems = () => {
-    return (
-        <nav className='stroke'>
-                <ul>
-                  <li>
-                    <NavLink to='/' exact>
-                      Home
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/people'>People</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/place'>Place</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/brand'>Brand</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/history'>History</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/fiction'>Fiction</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/videos'>Videos</NavLink>
-                  </li>
-                </ul>
-              </nav>
-    )
-}
+  return (
+    <nav className='stroke'>
+      <ul>
+        <li>
+          <NavLink to='/' exact>
+            गृहपृष्ठ
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/people'>सेलिब्रेटी</NavLink>
+        </li>
+        <li>
+          <NavLink to='/place'>राष्ट्रसेवक</NavLink>
+        </li>
+        <li>
+          <NavLink to='/brand'>भूईंमान्छे</NavLink>
+        </li>
+        <li>
+          <NavLink to='/podcast'>पडकास्ट</NavLink>
+        </li>
+        <li>
+          <NavLink to='/videos'>भिडियाे</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
-export default NavItems
+export default NavItems;

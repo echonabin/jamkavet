@@ -13,7 +13,7 @@ const PeopleState = (props) => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8000/wp-json/wp/v2/blog").then((res) => {
+    axios.get("https://api.jamkabhet.com/wp-json/wp/v2/blog").then((res) => {
       dispatch({
         type: HANDEL_SET_BLOGS,
         payload: res,

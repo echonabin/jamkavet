@@ -6,6 +6,7 @@ nav {
 nav ul {
     list-style: none;
     text-align: center;
+    font-size: 18px;
 }
 
 nav ul li {
@@ -60,6 +61,7 @@ nav.stroke ul li a:hover:after {
     color: #ffffff;
 
 }
+
 /* Mobile nav */
 .mobile_nav ul {
     list-style: none;
@@ -71,12 +73,13 @@ nav.stroke ul li a:hover:after {
     padding: 4px;
     padding-top: 15px;
     text-decoration: none;
-    color: rgb(2 ,1, 1);
+    color: rgb(2, 1, 1);
     font-weight: 800;
     text-transform: uppercase;
     margin: 0 10px;
 
 }
+
 .mobile_nav .active {
     color: #ffffff;
 
@@ -84,7 +87,7 @@ nav.stroke ul li a:hover:after {
 
 
 @media screen and (max-width:768px) {
-    nav{
+    nav {
         display: none;
     }
 }

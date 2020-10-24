@@ -1,0 +1,24 @@
+.podcast_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: .5em;
+    margin: 2em 3em;
+}
+
+.holds-the-iframe {
+    background: url(../../../../static//loading.gif) center center no-repeat;
+
+}
+
+@media screen and (max-width: 768px) {
+    .podcast_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 2em 3em;
+    }
+
+    iframe {
+        height: 100px;
+        width: 19rem;
+    }
+}

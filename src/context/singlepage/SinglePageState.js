@@ -7,7 +7,7 @@ export default class SinglePageState extends Component {
   };
   async componentDidMount() {
     const response = await axios.get(
-      "http://localhost:8000/wp-json/wp/v2/blog"
+      "https://api.jamkabhet.com/wp-json/wp/v2/blog"
     );
     this.setState({
       blogs: response.data,

@@ -79,7 +79,7 @@ export default function HideAppBar(props) {
                         activeClassName='active'
                         exact
                         onClick={handelDrawerToggle}>
-                        Home
+                        गृहपृष्ठ
                       </NavLink>
                     </li>
                     <li>
@@ -87,32 +87,27 @@ export default function HideAppBar(props) {
                         to='/people'
                         activeClassName='active'
                         onClick={handelDrawerToggle}>
-                        People
+                        सेलिब्रेटी
                       </NavLink>
                     </li>
                     <li>
                       <NavLink to='/place' onClick={handelDrawerToggle}>
-                        Place
+                        राष्ट्रसेवक
                       </NavLink>
                     </li>
                     <li>
                       <NavLink to='/brand' onClick={handelDrawerToggle}>
-                        Brand
+                        भूईंमान्छे
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to='/history' onClick={handelDrawerToggle}>
-                        History
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to='/fiction' onClick={handelDrawerToggle}>
-                        Fiction
+                      <NavLink to='/podcast' onClick={handelDrawerToggle}>
+                        पडकास्ट
                       </NavLink>
                     </li>
                     <li>
                       <NavLink to='/videos' onClick={handelDrawerToggle}>
-                        Videos
+                        भिडियाे
                       </NavLink>
                     </li>
                   </ul>

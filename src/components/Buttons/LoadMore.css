@@ -1,5 +1,5 @@
 :root {
-    --primaryColor: #e9c46a;
+    --primaryColor: #ff6d25bf;
     --mainWhite: #fff;
     --offWhite: #f7f7f7;
     --mainBlack: #222;
@@ -22,6 +22,7 @@
     transition: var(--mainTransition);
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 26px;
 }
 
 .btn-primary:hover {
