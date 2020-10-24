@@ -34,7 +34,6 @@ const SinglePost = (props) => {
   });
   return (
     <div className='container'>
-      {console.log(window.location.href)}
       {/* Article section */}
       <div className='__article'>
         <div className='__article_heading'>
@@ -42,17 +41,7 @@ const SinglePost = (props) => {
             <h3>{blog.title.rendered}</h3>
           </div>
           <div className='__article_date'>
-            <div className='item'>
-              <h4>{blog.date.slice(0, 10)}</h4>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://facebook.com/journalistjang'
-                className='author'>
-                <img src={authoricon} alt='icon' />
-                <span className='name'>{author}</span>
-              </a>
-            </div>
+            <h4>{blog.date.slice(0, 10)} मा प्रकाशित</h4>
             <div className='social_share'>
               <SocialShare
                 url={window.location.href}
@@ -64,6 +53,7 @@ const SinglePost = (props) => {
         <section className='_post'>
           <div className='_item-zoom'>
             <ModalImage
+              style={{ width: "25rem" }}
               small={thumbnail}
               large={thumbnail}
               alt={blog.title.rendered}
@@ -75,11 +65,15 @@ const SinglePost = (props) => {
           <button className='skewBtn purple' onClick={props.history.goBack}>
             Return
           </button>
-          <div className='social_share'>
-            <SocialShare
-              url={window.location.href}
-              title={blog.title.rendered}
-            />
+          <div className='item'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://facebook.com/journalistjang'
+              className='author'>
+              <img src={authoricon} alt='icon' />
+              <span className='name'>{author}</span>
+            </a>
           </div>
         </section>
       </div>

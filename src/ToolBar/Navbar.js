@@ -42,9 +42,9 @@ export default function HideAppBar(props) {
                   <img
                     src={require("../static/logoOnly.png")}
                     alt='logo'
-                    style={{ width: "60px" }}
+                    style={{ width: "60px", marginBottom: "34px" }}
                   />
-                  <h1
+                  {/* <h1
                     className='top_head'
                     style={{
                       fontSize: "35px",
@@ -55,7 +55,16 @@ export default function HideAppBar(props) {
                       margin: "-30px",
                     }}>
                     जम्काभेट
-                  </h1>
+                  </h1> */}
+                  <img
+                    src={require("../static/TextOnly.png")}
+                    alt='logo'
+                    style={{
+                      width: "180px",
+                      height: "110px",
+                      marginLeft: "-50px",
+                    }}
+                  />
                 </Link>
               </div>
               <div className={classes.grow} />
@@ -69,50 +78,52 @@ export default function HideAppBar(props) {
                 </IconButton>
               )}
               {showMenu && (
-                <div
-                  style={{ display: "flex", flexDirection: "column" }}
-                  className='mobile_nav'>
-                  <ul>
-                    <li>
-                      <NavLink
-                        to='/'
-                        activeClassName='active'
-                        exact
-                        onClick={handelDrawerToggle}>
-                        गृहपृष्ठ
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to='/people'
-                        activeClassName='active'
-                        onClick={handelDrawerToggle}>
-                        सेलिब्रेटी
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to='/place' onClick={handelDrawerToggle}>
-                        राष्ट्रसेवक
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to='/brand' onClick={handelDrawerToggle}>
-                        भूईंमान्छे
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to='/podcast' onClick={handelDrawerToggle}>
-                        पडकास्ट
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to='/videos' onClick={handelDrawerToggle}>
-                        भिडियाे
-                      </NavLink>
-                    </li>
-                  </ul>
-                  {(window.onscroll = handelDrawerToggle)}
-                </div>
+                <>
+                  <div
+                    style={{ display: "flex", flexDirection: "column" }}
+                    className='mobile_nav'>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to='/'
+                          activeClassName='active'
+                          exact
+                          onClick={handelDrawerToggle}>
+                          गृहपृष्ठ
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to='/people'
+                          activeClassName='active'
+                          onClick={handelDrawerToggle}>
+                          सेलिब्रेटी
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to='/place' onClick={handelDrawerToggle}>
+                          राष्ट्रसेवक
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to='/brand' onClick={handelDrawerToggle}>
+                          भूईंमान्छे
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to='/podcast' onClick={handelDrawerToggle}>
+                          पडकास्ट
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to='/videos' onClick={handelDrawerToggle}>
+                          भिडियाे
+                        </NavLink>
+                      </li>
+                    </ul>
+                    {(window.onscroll = handelDrawerToggle)}
+                  </div>
+                </>
               )}
 
               <NavItems />

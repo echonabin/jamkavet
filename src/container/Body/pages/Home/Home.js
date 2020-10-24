@@ -22,7 +22,7 @@ const Home = (history) => {
     <>
       <HomeLayout>
         {/* Remember there should only be 3 items on each */}
-        <HeadingButton text='नयाँनाैलाे' />
+        <HeadingButton text='नयाँ नाैलाे' />
 
         <Inspiring />
 

@@ -1,4 +1,4 @@
-@import './featured';
+@import "./featured";
 
 .container {
   font-family: sans-serif;
@@ -9,7 +9,7 @@
   padding: 0 6em;
 }
 
-.container>div:nth-of-type(1) {
+.container > div:nth-of-type(1) {
   margin: 1rem;
   background-color: white;
   display: grid;
@@ -18,9 +18,11 @@
 }
 
 .__article {
-
   &_date {
-    border-color: lightgray;
+    padding-left: 4.5em;
+    color: gray;
+    /* font-size: 17px; */
+    font-style: italic;
 
     .social_share {
       display: flex;
@@ -30,15 +32,13 @@
 
   &_heading {
     display: grid;
-    grid-template-rows: 1fr .5fr;
+    grid-template-rows: 1fr 0.5fr;
     border-bottom: thin solid;
     border-color: lightgray;
-
   }
 }
 
 section {
-
   ._content {
     margin: 1em 5em;
     font-size: 1.3rem;
@@ -52,11 +52,7 @@ section {
       justify-content: center;
     }
   }
-
-
 }
-
-
 
 ._item-zoom {
   position: relative;
@@ -91,9 +87,8 @@ section {
 
   h3 {
     font-weight: 700;
-    font-family: 'Martel', serif;
-    ;
-    font-size: 50px;
+    font-family: "Martel", serif;
+    font-size: 30px;
     text-transform: uppercase;
     line-height: 60px;
     color: black;
@@ -141,11 +136,11 @@ section {
     text-transform: uppercase;
     white-space: nowrap;
     margin-top: 1rem;
-    margin-right: .5em;
+    margin-right: 0.5em;
   }
 
   img {
-    margin: .1rem;
+    margin: 0.1rem;
     width: 3em;
     display: block;
     border-radius: 100px;
@@ -157,10 +152,8 @@ section {
   justify-content: flex-end;
 }
 
-@media screen and (max-width:768px) {
-
+@media screen and (max-width: 768px) {
   section {
-
     .title {
       text-align: center;
       margin-bottom: 4rem;
@@ -176,7 +169,7 @@ section {
     display: inline;
   }
 
-  .container>div:nth-of-type(1) {
+  .container > div:nth-of-type(1) {
     display: inline;
   }
 
@@ -197,12 +190,12 @@ section {
         position: relative;
         border: 1px thin solid lightgrey;
         overflow: hidden;
-        width: 310px;
-        height: 250px;
+        width: 345px;
+        height: 213px;
         box-sizing: border-box;
-        margin-left: 2em;
+        margin-left: 1em;
         margin-top: 2em;
-        margin-bottom: -3em;
+        margin-bottom: -2em;
       }
     }
 
@@ -226,13 +219,13 @@ section {
       display: inline;
       border-bottom: thin solid;
       border-color: lightgray;
-
     }
 
     ._content {
       text-align: left;
       margin: 2px;
       line-height: 43px;
+      padding: 1em;
 
       p {
         font-weight: 400;
@@ -247,7 +240,7 @@ section {
     }
 
     .skewBtn {
-      margin-left: 7rem;
+      margin-left: 8.5rem;
     }
   }
 
@@ -280,7 +273,7 @@ section {
   outline: none;
   cursor: pointer;
   background: none;
-  transition: .5s;
+  transition: 0.5s;
   font-size: 24px;
   border-radius: 5px;
   font-family: "Lato", sans-serif;

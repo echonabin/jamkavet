@@ -52,7 +52,7 @@
     color: #333;
 }
 
-.card h1:hover{
+.card h1:hover {
     color: rgba(250, 68, 2, 0.767);
 }
 
@@ -71,9 +71,9 @@
 }
 
 .card .thumb {
-    padding-bottom: 60%;
+    padding-bottom: 54%;
     background-size: cover;
-    background-position: center center;
+    background-position: 20% center;
 }
 
 .card .thumb img {

@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import SinglePageContext from "../../context/singlepage/SinglePageContext";
-import SingleBlogTrending from "./SingleBlogTredCard/SingleBlogTrending";
-import SocialShare from "../SocialShare/SocialShare";
-import HeadingButton from "../Buttons/HeadingButton";
-import Loading from "../Loading/Loading";
-import ModalImage from "react-modal-image";
 
-const SingleTrendCard = (props) => {
+import SinglePageContext from "../../context/singlepage/SinglePageContext";
+import SocialShare from "../SocialShare/SocialShare";
+import SingleBlogTrending from "../trending/SingleBlogTredCard/SingleBlogTrending";
+import HeadingButton from "../Buttons/HeadingButton";
+import ModalImage from "react-modal-image";
+import Loading from "../Loading/Loading";
+
+const SinglePost = (props) => {
   const [author, setAuthor] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [authoricon, setAuthoricon] = useState("");
-
   const { getBlog } = useContext(SinglePageContext);
   const [blogId] = useState(props.match.params.blogId);
   const [historyId] = useState(props);
@@ -31,7 +31,6 @@ const SingleTrendCard = (props) => {
     setThumbnail(res[0].data.media_details.sizes.full.source_url);
     setAuthoricon(res[1].data.avatar_urls[96]);
   });
-
   return (
     <div className='container'>
       {/* Article section */}
@@ -41,13 +40,7 @@ const SingleTrendCard = (props) => {
             <h3>{blog.title.rendered}</h3>
           </div>
           <div className='__article_date'>
-            <div className='item'>
-              <h4>{blog.date.slice(0, 10)}</h4>
-              <a href='https://facebook.com/journalistjang' className='author'>
-                <img src={authoricon} alt='icon' />
-                <span className='name'>{author}</span>
-              </a>
-            </div>
+            <h4>{blog.date.slice(0, 10)} मा प्रकाशित</h4>
             <div className='social_share'>
               <SocialShare
                 url={window.location.href}
@@ -59,6 +52,7 @@ const SingleTrendCard = (props) => {
         <section className='_post'>
           <div className='_item-zoom'>
             <ModalImage
+              style={{ width: "25rem" }}
               small={thumbnail}
               large={thumbnail}
               alt={blog.title.rendered}
@@ -70,11 +64,15 @@ const SingleTrendCard = (props) => {
           <button className='skewBtn purple' onClick={props.history.goBack}>
             Return
           </button>
-          <div className='social_share'>
-            <SocialShare
-              url={window.location.href}
-              title={blog.title.rendered}
-            />
+          <div className='item'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://facebook.com/journalistjang'
+              className='author'>
+              <img src={authoricon} alt='icon' />
+              <span className='name'>{author}</span>
+            </a>
           </div>
         </section>
       </div>
@@ -90,4 +88,4 @@ const SingleTrendCard = (props) => {
   );
 };
 
-export default withRouter(SingleTrendCard);
+export default withRouter(SinglePost);

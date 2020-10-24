@@ -7,6 +7,82 @@
     background-color: #efefef;
     width: 100%;
     text-align: center;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+.footer .form_container {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 1fr;
+    margin-bottom: 1.5em;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    background-color: #c3c3c36b;
+}
+
+.footer .form_container .company_detail {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.footer .form_container .company_detail h1 {
+    font-size: 18px;
+    color: #266b9e;
+    font-weight: 700;
+}
+
+.footer .form_container .company_detail span {
+    color: #202020;
+    font-size: 16px;
+    margin-bottom: .3em;
+}
+
+.footer .form_container .line {
+    display: inline-flex;
+    width: 10px;
+}
+
+.footer .form_container .story_form {
+    display: block;
+    box-shadow: 6px 4px 5px rgb(160 47 47 / 45%);
+    margin: 0.5em 1em;
+    background: #f3f3f3;
+    border-radius: 26px 26px 26px 26px;
+}
+
+.footer .form_container .story_form .story_text {
+    text-align: justify;
+    font-size: 16px;
+    color: #202020;
+}
+
+.footer .form_container .story_form .story_text .icon_publish {
+    color: #4a002cc9;
+    margin-top: 4px;
+    margin-left: 18.5rem;
+}
+
+.footer .form_container .story_form .story_text .publish_text {
+    padding: 0 1em;
+    text-align: justify;
+    margin-bottom: .5em;
+}
+
+.footer .form_container .share_button {
+    display: block;
+    box-shadow: 6px 4px 5px rgb(160 47 47 / 45%);
+    margin: 0.5em 0;
+    background: #f3f3f3;
+    border-radius: 0px 26px 26px 0;
+    margin-right: 25px;
+}
+
+.footer .form_container .story_form h1 {
+    font-size: 18px;
+    color: #266b9e;
+    font-weight: 700;
+    text-align: center;
 }
 
 .social-buttons {
@@ -74,6 +150,7 @@
 .social-button:focus,
 .social-button:hover {
     color: #fff;
+    text-decoration: none;
 }
 
 .social-button:focus::after,
@@ -108,19 +185,19 @@
 }
 
 .social-button--youtube {
-    color: #FE0000;
+    color: #fe0000;
 }
 
 .social-button--youtube::after {
-    background: #FE0000;
+    background: #fe0000;
 }
 
 .social-button--instagram {
-    color: #CB2A9C;
+    color: #cb2a9c;
 }
 
 .social-button--instagram::after {
-    background: #CB2A9C;
+    background: #cb2a9c;
 }
 
 .social-button--twitter {
@@ -145,4 +222,69 @@
 
 .social-button--npmjs::after {
     background: #c12127;
+}
+
+@media screen and (max-width:768px) {
+    .footer {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        background-color: #efefef;
+        text-align: center;
+    }
+
+    .footer .form_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 1.5em;
+    }
+
+    .footer .form_container .story_form {
+        display: block;
+        box-shadow: 6px 4px 5px rgb(160 47 47 / 45%);
+        margin: 0.5em 15px;
+        background: #f3f3f3;
+        border-radius: 26px 26px 26px 26px;
+    }
+
+    .footer .form_container .story_form .story_text .icon_publish {
+        color: rgba(74, 0, 44, 0.79);
+        margin-top: -17px;
+        margin-left: 8rem;
+    }
+
+    .footer .form_container .story_form .story_text .publish_text {
+        margin-left: 0px;
+        margin-right: 0px;
+        text-align: justify;
+    }
+
+    .footer .form_container .share_button {
+        display: block;
+        box-shadow: none;
+        margin: 0.5em 0;
+        background: none;
+        border-radius: none;
+        margin: 0.5em 15px;
+    }
+
+    .footer .form_container .padding_div {
+        margin-bottom: 40px;
+    }
+
+    .social-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 90px;
+    }
+
+    .footer .form_container .story_form .story_text {
+        text-align: justify;
+        font-size: 16px;
+        margin: 22px;
+        color: #202020;
+    }
 }
