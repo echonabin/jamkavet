@@ -17,7 +17,7 @@ const Bottombar = () => {
             </div>
             <h1>सम्पर्क</h1>
             <span>इमेल - contact@jamkabhet.com</span>
-            <span>सम्पर्क - ९८४९३४७०२८</span>
+            <span>सम्पर्क - ९८४६०५३०१४</span>
             <span>ठेगाना - बानेश्वर, काठमाडौं </span>
           </div>
           <div className='line' />
@@ -26,7 +26,7 @@ const Bottombar = () => {
               <div className='icon_publish'>
                 <i className='fas fa-pen-nib' />
               </div>
-              <h1>मेराे कथा</h1>
+              <h1>अनुरोध</h1>
               <div className='publish_text'>
                 श्रोता र दर्शकको रुची र आग्रहलाई स्वीकार गर्दै विभिन्न
                 पत्रपत्रिका र अनलाइनमा प्रकाशित सामग्रीहरु पनि जम्काभेटमा साभार
@@ -83,6 +83,7 @@ const Bottombar = () => {
             </span>
           </a>
         </div>
+        <span> Developed by: echonabin@gmail.com </span>
         &copy; {`Jamkabhet ${d.getFullYear()}`}
       </footer>
     </div>

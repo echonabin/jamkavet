@@ -8,6 +8,7 @@ import SingleBlogTrending from "../trending/SingleBlogTredCard/SingleBlogTrendin
 import HeadingButton from "../Buttons/HeadingButton";
 import ModalImage from "react-modal-image";
 import Loading from "../Loading/Loading";
+import HelmetMetaData from "../Helmet/HelmetMetaData";
 
 const SinglePost = (props) => {
   const [author, setAuthor] = useState("");
@@ -32,59 +33,67 @@ const SinglePost = (props) => {
     setAuthoricon(res[1].data.avatar_urls[96]);
   });
   return (
-    <div className='container'>
-      {/* Article section */}
-      <div className='__article'>
-        <div className='__article_heading'>
-          <div className='title'>
-            <h3>{blog.title.rendered}</h3>
-          </div>
-          <div className='__article_date'>
-            <h4>{blog.date.slice(0, 10)} मा प्रकाशित</h4>
-            <div className='social_share'>
-              <SocialShare
-                url={window.location.href}
-                title={blog.title.rendered}
-              />
+    <>
+      <HelmetMetaData
+        title={blog.title.rendered}
+        description={blog.title.rendered + author}
+        image={thumbnail}></HelmetMetaData>
+      <div className='container'>
+        {/* Article section */}
+        <div className='__article'>
+          <div className='__article_heading'>
+            <div className='title'>
+              <h3>{blog.title.rendered}</h3>
+            </div>
+            <div className='__article_date'>
+              <h4>{blog.date.slice(0, 10)} मा प्रकाशित</h4>
+              <div className='social_share'>
+                <SocialShare
+                  url={window.location.href}
+                  title={blog.title.rendered}
+                />
+              </div>
             </div>
           </div>
+          <section className='_post'>
+            <div className='_item-zoom'>
+              <ModalImage
+                style={{ width: "25rem" }}
+                small={thumbnail}
+                large={thumbnail}
+                alt={blog.title.rendered}
+              />
+            </div>
+            <div className='_content'>
+              <div
+                dangerouslySetInnerHTML={{ __html: blog.content.rendered }}
+              />
+            </div>
+            <button className='skewBtn purple' onClick={props.history.goBack}>
+              Return
+            </button>
+            <div className='item'>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://facebook.com/jamkaabhet'
+                className='author'>
+                <img src={authoricon} alt='icon' />
+                <span className='name'>{author}</span>
+              </a>
+            </div>
+          </section>
         </div>
-        <section className='_post'>
-          <div className='_item-zoom'>
-            <ModalImage
-              style={{ width: "25rem" }}
-              small={thumbnail}
-              large={thumbnail}
-              alt={blog.title.rendered}
-            />
-          </div>
-          <div className='_content'>
-            <div dangerouslySetInnerHTML={{ __html: blog.content.rendered }} />
-          </div>
-          <button className='skewBtn purple' onClick={props.history.goBack}>
-            Return
-          </button>
-          <div className='item'>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://facebook.com/journalistjang'
-              className='author'>
-              <img src={authoricon} alt='icon' />
-              <span className='name'>{author}</span>
-            </a>
-          </div>
-        </section>
+        {/* Article section end */}
+        <div className='container_featured'>
+          <HeadingButton text='You May Like' />
+          {/* Featured Posts here! */}
+          <section className='_cards'>
+            <SingleBlogTrending history={historyId} />
+          </section>
+        </div>
       </div>
-      {/* Article section end */}
-      <div className='container_featured'>
-        <HeadingButton text='You May Like' />
-        {/* Featured Posts here! */}
-        <section className='_cards'>
-          <SingleBlogTrending history={historyId} />
-        </section>
-      </div>
-    </div>
+    </>
   );
 };
 

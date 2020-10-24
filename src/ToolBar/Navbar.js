@@ -37,7 +37,12 @@ export default function HideAppBar(props) {
         <HideNavBar {...props}>
           <AppBar color='primary' style={{ padding: "20px" }}>
             <Toolbar className={classes.root}>
-              <div style={{ marginBottom: "-32px", marginTop: "-38px" }}>
+              <div
+                style={{
+                  marginBottom: "-40px",
+                  marginTop: "-19px",
+                  marginLeft: "-35px",
+                }}>
                 <Link to='/' style={{ textDecoration: "none" }}>
                   <img
                     src={require("../static/logoOnly.png")}

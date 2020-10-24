@@ -13,7 +13,7 @@ const Blog = ({
 }) => {
   return (
     <Link
-      to={{ pathname: `/${id}`, hash: `#${header}` }}
+      to={{ pathname: `/${id}`, hash: "#jamkabhet_story" }}
       className={`item-${item}`}
       style={{ textDecoration: "none" }}>
       <div className='card'>

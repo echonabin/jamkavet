@@ -20,36 +20,40 @@ class TrendingCard extends Component {
     if (state.isLoading) {
       return <Loading />;
     }
-    const renderedList = state.blogs.data.slice(0, this.state.visible).map((blog) => {
-      if (blog.categories.includes(7)) {
-        return (
-          <TrendSingle
-            key={blog.id}
-            id={blog.id}
-            CardPosition={blog.id}
-            title={blog.title.rendered}
-            description={blog.excerpt.rendered.slice(0, 75) + "...."}
-            mediaItem={blog.featured_media}
-            authorItem={blog.author}
-          />
-        );
-      }
-      return null;
-    });
-    return (<>
-    <div className='trendContainer'>{renderedList}</div>
-    <div
-        style={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "1.5em",
-              padding: "1em",
-            }}>
-            <button className='btn-primary' onClick={this.showMoreItems}>
-              Load More
-            </button>
+    const renderedList = state.blogs.data
+      .slice(0, this.state.visible)
+      .map((blog) => {
+        if (blog.categories.includes(3)) {
+          return (
+            <TrendSingle
+              key={blog.id}
+              id={blog.id}
+              CardPosition={blog.id}
+              title={blog.title.rendered}
+              description={blog.excerpt.rendered.slice(0, 75) + "...."}
+              mediaItem={blog.featured_media}
+              authorItem={blog.author}
+            />
+          );
+        }
+        return null;
+      });
+    return (
+      <>
+        <div className='trendContainer'>{renderedList}</div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "1.5em",
+            padding: "1em",
+          }}>
+          <button className='btn-primary' onClick={this.showMoreItems}>
+            Load More
+          </button>
         </div>
-    </>);
+      </>
+    );
   }
 }
 

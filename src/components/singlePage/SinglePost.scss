@@ -9,7 +9,7 @@
   padding: 0 6em;
 }
 
-.container > div:nth-of-type(1) {
+.container>div:nth-of-type(1) {
   margin: 1rem;
   background-color: white;
   display: grid;
@@ -169,7 +169,7 @@ section {
     display: inline;
   }
 
-  .container > div:nth-of-type(1) {
+  .container>div:nth-of-type(1) {
     display: inline;
   }
 
@@ -200,6 +200,10 @@ section {
     }
 
     .__article_heading {
+      .__article_date {
+        padding-left: 0px;
+      }
+
       .title {
         h3 {
           font-weight: 700;

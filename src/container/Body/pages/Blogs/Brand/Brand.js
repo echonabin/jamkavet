@@ -25,7 +25,7 @@ class Brand extends Component {
     const renderedList = state.blogs.data
       .slice(0, this.state.visible)
       .map((blog) => {
-        if (blog.categories.includes(4)) {
+        if (blog.categories.includes(2)) {
           return (
             <BlogSingle
               key={blog.id}

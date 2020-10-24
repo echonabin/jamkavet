@@ -1,5 +1,5 @@
 import React from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Trend = ({
   item,
@@ -11,9 +11,8 @@ const Trend = ({
   authorIcon,
 }) => {
   return (
-    
     <Link
-      to={{ pathname: `/trend/${id}`, hash: `#${header}` }}
+      to={{ pathname: `/trend/${id}`, hash: `#jamkabhet_trending` }}
       className={`item-${item}`}
       style={{ textDecoration: "none" }}>
       <div className='card'>

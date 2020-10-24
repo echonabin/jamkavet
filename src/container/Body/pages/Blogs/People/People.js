@@ -26,7 +26,7 @@ class People extends Component {
     const renderedList = state.blogs.data
       .slice(0, this.state.visible)
       .map((blog) => {
-        if (blog.categories.includes(3)) {
+        if (blog.categories.includes(8)) {
           return (
             <BlogSingle
               key={blog.id}
