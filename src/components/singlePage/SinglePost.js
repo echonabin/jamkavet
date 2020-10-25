@@ -52,6 +52,8 @@ const SinglePost = (props) => {
                 <SocialShare
                   url={window.location.href}
                   title={blog.title.rendered}
+                  description={blog.title.rendered + " " + author}
+                  image={thumbnail}
                 />
               </div>
             </div>
